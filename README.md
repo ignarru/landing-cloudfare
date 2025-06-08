@@ -49,11 +49,11 @@ When deploying, ensure required environment variables—such as `SUPABASE_URL` a
 
 1. In your Cloudflare dashboard create a new Pages project and connect this
    repository.
-**Leave the Root Directory empty** (i.e. use the repository root). If a
-   subfolder like `client` is selected, Cloudflare runs `npm ci` in that
+2. **Leave the Root Directory empty** (i.e. use the repository root). If you
+   select a subfolder (for example `client`), Cloudflare runs `npm ci` in that
    directory and fails because it lacks a `package-lock.json`.
-3. Set the **Build command** to `npm run build` and the **Build output directory**
-   to `dist/public`.
+3. Set the **Build command** to `npm run build` and the **Build output
+   directory** to `dist/public`.
 4. Add your Supabase credentials (`SUPABASE_URL` and
    `SUPABASE_SERVICE_ROLE_KEY`) in the **Environment Variables** section.
 5. Deploy the site. The contact form will post to `/api/contact`, which is
