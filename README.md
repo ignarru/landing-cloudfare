@@ -9,6 +9,8 @@ Copy `.env.example` to `.env` (this file is ignored by Git) and fill in your Sup
 
 ```bash
 cp .env.example .env
+# For Pages development copy the variables to `.dev.vars`
+cp .dev.vars.example .dev.vars
 ```
 
 Then edit `.env` and set:
