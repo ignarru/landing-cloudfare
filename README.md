@@ -58,8 +58,9 @@ When deploying, ensure required environment variables—such as `SUPABASE_URL` a
    `SUPABASE_SERVICE_ROLE_KEY`) in the **Environment Variables** section.
 5. Deploy the site. The contact form will post to `/api/contact`, which is
    implemented as a Pages Function under `functions/api/contact.ts`.
-6. For local development you can run `npx wrangler pages dev dist/public` after
-   building to simulate the production environment.
+6. For local development run `npm run dev` after building to simulate the
+   production environment. Copy `.dev.vars.example` to `.dev.vars` and fill in
+   your Supabase credentials so the function can access them locally.
    
 ## About section
 
