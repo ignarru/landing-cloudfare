@@ -43,6 +43,19 @@ Static assets are served with compression and long-term caching. A
 When deploying, ensure required environment variables—such as `SUPABASE_URL` and
 `SUPABASE_SERVICE_ROLE_KEY`—are provided.
 
+### Deploy to Cloudflare Pages
+
+1. In your Cloudflare dashboard create a new Pages project and connect this
+   repository.
+2. Set the **Build command** to `npm run build` and the **Build output directory**
+   to `dist/public`.
+3. Add your Supabase credentials (`SUPABASE_URL` and
+   `SUPABASE_SERVICE_ROLE_KEY`) in the **Environment Variables** section.
+4. Deploy the site. The contact form will post to `/api/contact`, which is
+   implemented as a Pages Function under `functions/api/contact.ts`.
+5. For local development you can run `npx wrangler pages dev dist/public` after
+   building to simulate the production environment.
+   
 ## About section
 
 A personal "Acerca de mí" section appears before the services listing. You can edit the content in `client/src/components/About.tsx` and replace the photo at `client/public/profile.png`.
