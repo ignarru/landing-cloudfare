@@ -78,7 +78,7 @@ import Contact from "./Contact";
 import { CONTACT_EXTRA_OFFSET } from "@/lib/constants";
 
 // Increase desktop offset
-const customOffset = { ...CONTACT_EXTRA_OFFSET, desktop: -200 };
+const customOffset = { ...CONTACT_EXTRA_OFFSET, desktop: -260 };
 
 <Contact offset={customOffset} />;
 ```
