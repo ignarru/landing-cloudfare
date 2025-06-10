@@ -181,7 +181,7 @@ export default function Navigation() {
               >
                 <span>Consulta Gratis</span>
               </Button>
-                <ThemeToggle />
+              <ThemeToggle />
             </div>
           </motion.div>
           )}
