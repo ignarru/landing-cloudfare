@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { insertContactSchema } from "@shared/schema";
+import { z } from "zod";
 
 export default function Contact() {
   const [ctaVisible, setCtaVisible] = useState(false);
@@ -55,15 +57,24 @@ export default function Contact() {
   }, []);
 
  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-   
-    try {
-      const apiUrl = new URL("/api/contact", window.location.origin).toString();
-      const res = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const formSchema = insertContactSchema.extend({
+      email: z.string().email({ message: "Email inválido" }),
+    });
+    const parsed = formSchema.safeParse(formData);
+    if (!parsed.success) {
+      const message = parsed.error.errors[0]?.message || "Datos inválidos";
+      throw new Error(message);
+    }
+
+    const apiUrl = new URL("/api/contact", window.location.origin).toString();
+    const res = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
       });
 
       if (!res.ok) {
