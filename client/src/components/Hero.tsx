@@ -89,14 +89,14 @@ export default function Hero() {
       id="inicio"
       className="h-screen box-border flex flex-col items-center justify-center pt-32 md:pt-28 scroll-mt-32 md:scroll-mt-28 px-4 sm:px-6"
     >
-      <div className="max-w-7xl mx-auto text-center w-full">
+        <div className="max-w-7xl mx-auto text-center md:text-left w-full">
         <motion.div
           layout
           className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-center md:text-left text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Transforma tu negocio con
             <br />
             <span className="gradient-text">Inteligencia Artificial</span>
