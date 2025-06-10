@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Brain, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "./ThemeToggle";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { HERO_DELAY_MS } from "@/lib/constants";
 
@@ -114,6 +115,7 @@ export default function Navigation() {
             >
               <span>Consulta Gratis</span>
             </Button>
+            <ThemeToggle />
           </div>
           
           {/* Mobile Menu Button */}
@@ -179,6 +181,7 @@ export default function Navigation() {
               >
                 <span>Consulta Gratis</span>
               </Button>
+                <ThemeToggle />
             </div>
           </motion.div>
           )}
