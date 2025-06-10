@@ -87,7 +87,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex flex-col items-center justify-center pt-28 md:pt-20 scroll-mt-28 md:scroll-mt-20 pb-10 px-4 sm:px-6"
+      className="h-screen box-border flex flex-col items-center justify-center pt-24 md:pt-20 scroll-mt-24 md:scroll-mt-20 px-4 sm:px-6"
     >
       <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
@@ -142,7 +142,7 @@ export default function Hero() {
                   brainActive ? "animate-bounce" : ""
                } ${
                   brainExit ? "brain-slide-down" : ""
-                } -translate-y-16 sm:-translate-y-20 md:-translate-y-24 lg:-translate-y-28 xl:-translate-y-32 2xl:-translate-y-36`}
+                } -translate-y-8 sm:-translate-y-12 md:-translate-y-16 lg:-translate-y-20 xl:-translate-y-24 2xl:-translate-y-28`}
               >
                 <InteractiveBrain
                   className="mx-auto"
