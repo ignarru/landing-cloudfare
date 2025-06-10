@@ -350,13 +350,13 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-40px);
+    transform: translateY(-30px);
   }
 }
 
 @keyframes brain-fast-down {
   from {
-    transform: translateY(-40px);
+    transform: translateY(-30px);
   }
   to {
     transform: translateY(120vh);
