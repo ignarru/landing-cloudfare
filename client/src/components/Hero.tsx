@@ -8,7 +8,6 @@ import { HERO_DELAY_MS } from "@/lib/constants";
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [brainActive, setBrainActive] = useState(false);
-  const [brainBounce, setBrainBounce] = useState(false);
   const [burstActive, setBurstActive] = useState(false);
   const [starsExpanded, setStarsExpanded] = useState(false);
   const [started, setStarted] = useState(false);
@@ -69,7 +68,6 @@ export default function Hero() {
   const handleStartClick = () => {
     if (started) return;
     setStarted(true);
-     setTimeout(() => setButtonHidden(true), 600);
     setTimeout(() => setButtonHidden(true), 600);
     setStarsExpanded(true);
     setTimeout(() => setStarsExpanded(false), 800);
@@ -78,15 +76,11 @@ export default function Hero() {
     setSparkles(generateSparkles(8));
     setTimeout(() => {
       setBrainActive(false);
-      setBrainBounce(true);
-      setTimeout(() => setBrainBounce(false), 600);
+      setBrainExit(true);
+      setSparkles([]);
       setTimeout(() => {
-        setSparkles([]);
-        setBrainExit(true);
-        setTimeout(() => {
-          setBrainHidden(true);
-        }, 1800);
-      }, 600);
+        setBrainHidden(true);
+      }, 1400);
     }, 1000);
   };
 
@@ -146,9 +140,7 @@ export default function Hero() {
             >
               <div
                 className={`relative w-fit animate-float ${
-                  brainBounce ? "animate-brain-bounce-once" : ""
-                } ${
-                  brainExit ? "brain-fly-out" : ""
+                  brainExit ? "brain-drop-out" : ""
                 }`}
               >
                 <InteractiveBrain
