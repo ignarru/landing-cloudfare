@@ -130,7 +130,7 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
         
-        <div className="relative mt-8 h-60 sm:h-72">
+        <div className="relative mt-8 h-60 sm:h-72 md:h-80 lg:h-96">
           {!brainHidden && (
             <div
               className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
@@ -140,7 +140,7 @@ export default function Hero() {
               <div
                 className={`relative w-fit animate-float ${
                   brainActive ? "animate-bounce" : ""
-               } ${brainExit ? "brain-slide-down" : ""} -translate-y-20 lg:-translate-y-24`}
+               } ${brainExit ? "brain-slide-down" : ""} -translate-y-20 lg:-translate-y-24 xl:-translate-y-28 2xl:-translate-y-32`}
               >
                 <InteractiveBrain
                   className="mx-auto"
