@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { CONTACT_EXTRA_OFFSET } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,7 +7,13 @@ import { useToast } from "@/hooks/use-toast";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 
-export default function Contact() {
+export interface ContactProps {
+  offset?: typeof CONTACT_EXTRA_OFFSET;
+}
+
+export default function Contact({
+  offset = CONTACT_EXTRA_OFFSET
+}: ContactProps) {
   const [ctaVisible, setCtaVisible] = useState(false);
   const [formVisible, setFormVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,17 +27,20 @@ export default function Contact() {
   const formRef = useRef<HTMLElement>(null);
   const { toast } = useToast();
 
-  const scrollToContact = () => {
+  const scrollToContact = (customOffset = offset) => {
     const element = document.getElementById("contacto");
     if (element) {
       const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
       // Scroll further down so the entire form section is visible
-      const extraOffset = window.innerWidth < 768 ? -120 : -160;
+      const offsetValue =
+        window.innerWidth < 768
+          ? customOffset.mobile
+          : customOffset.desktop;
       const elementPosition =
         element.getBoundingClientRect().top +
         window.pageYOffset -
         navHeight +
-        extraOffset;
+        offsetValue;
       window.scrollTo({ top: elementPosition, behavior: "smooth" });
     }
   };
@@ -137,7 +147,7 @@ export default function Contact() {
             Agenda una consulta gratuita y descubre cómo la IA puede revolucionar tu empresa
           </p>
           <Button
-            onClick={scrollToContact}
+            onClick={() => scrollToContact(offset)}
             aria-label="Ir al formulario de contacto"
             className="bg-white text-accent hover:bg-gray-100 px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all"
           >
