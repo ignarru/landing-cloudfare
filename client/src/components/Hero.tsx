@@ -80,8 +80,8 @@ const [brainUp, setBrainUp] = useState(false);
       setSparkles([]);
       setBrainUp(true);
       setTimeout(() => {
-        setBrainUp(false);
         setBrainDown(true);
+        setBrainUp(false);
         setTimeout(() => {
           setBrainHidden(true);
         }, 800);
@@ -231,7 +231,7 @@ const [brainUp, setBrainUp] = useState(false);
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col items-center mt-12"
+              className="flex flex-col items-center mt-20"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
                 ¿Querés conocer más?
@@ -240,7 +240,7 @@ const [brainUp, setBrainUp] = useState(false);
                 initial={{ opacity: 0 }}
                 animate={{ opacity: showArrow ? 1 : 0 }}
                 transition={{ duration: 0.6 }}
-                className="mt-6"
+                className="mt-8"
               >
                 <ChevronDown className="w-8 h-8 text-iabyia-light animate-bounce-slow" />
               </motion.div>
