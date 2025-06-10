@@ -87,7 +87,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex flex-col items-center justify-center pt-28 md:pt-20 scroll-mt-28 md:scroll-mt-20 pb-10 px-4"
+      className="min-h-screen flex flex-col items-center justify-center pt-28 md:pt-20 scroll-mt-28 md:scroll-mt-20 pb-10 px-4 sm:px-6"
     >
       <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
@@ -96,7 +96,7 @@ export default function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Transforma tu negocio con
             <br />
             <span className="gradient-text">Inteligencia Artificial</span>
@@ -140,7 +140,9 @@ export default function Hero() {
               <div
                 className={`relative w-fit animate-float ${
                   brainActive ? "animate-bounce" : ""
-               } ${brainExit ? "brain-slide-down" : ""} -translate-y-20 lg:-translate-y-24 xl:-translate-y-28 2xl:-translate-y-32`}
+               } ${
+                  brainExit ? "brain-slide-down" : ""
+                } -translate-y-12 sm:-translate-y-14 md:-translate-y-16 lg:-translate-y-20 xl:-translate-y-24 2xl:-translate-y-28`}
               >
                 <InteractiveBrain
                   className="mx-auto"
