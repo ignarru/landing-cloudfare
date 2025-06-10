@@ -135,11 +135,11 @@ export default function Contact() {
       <section
         id="contacto"
         ref={formRef}
-        className={`py-16 sm:py-20 text-center transition-all duration-700 scroll-mt-36 md:scroll-mt-28 ${
+        className={`py-16 sm:py-20 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className={`text-center mb-16 transition-all duration-700 ${
+        <div className={`text-center mb-12 transition-all duration-700 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -153,11 +153,11 @@ export default function Contact() {
         <div className="max-w-2xl mx-auto">
           <form
             onSubmit={handleSubmit}
-            className={`space-y-6 transition-all duration-700 delay-300 ${
+            className={`space-y-4 transition-all duration-700 delay-300 ${
               formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+              <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                 <label className="flex flex-col">
                   <span className="sr-only">Nombre</span>
                   <Input
