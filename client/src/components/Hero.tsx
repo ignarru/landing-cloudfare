@@ -130,7 +130,7 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
         
-        <div className="relative mt-8 h-60 sm:h-72 md:h-80 lg:h-96">
+        <div className="relative mt-8 md:mt-6 lg:mt-4 xl:mt-2 h-60 sm:h-72 md:h-80 lg:h-96">
           {!brainHidden && (
             <div
               className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
@@ -222,7 +222,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="absolute inset-x-0 bottom-8 flex flex-col items-center"
+              className="absolute inset-x-0 bottom-8 md:bottom-6 lg:bottom-4 flex flex-col items-center"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
                 ¿Querés conocer más?
