@@ -92,9 +92,9 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="min-h-screen md:min-h-[110vh] box-border flex flex-col items-center justify-center pt-32 md:pt-28 pb-20 scroll-mt-32 md:scroll-mt-28 px-4 sm:px-6"
+      className="min-h-screen md:min-h-[120vh] box-border flex flex-col items-center justify-center pt-32 md:pt-28 pb-20 scroll-mt-32 md:scroll-mt-28 px-4 sm:px-6"
     >
-        <div className="max-w-7xl mx-auto text-center md:text-left w-full">
+        <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
           layout
           className={`transition-all duration-1000 ${
