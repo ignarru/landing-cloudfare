@@ -127,7 +127,7 @@ export default function Contact() {
               if (element) {
                 const nav = document.querySelector("nav");
                 const navHeight = (nav as HTMLElement)?.offsetHeight ?? 0;
-                const offset = window.innerWidth < 768 ? -100 : 0;
+                const offset = window.innerWidth < 768 ? -100 : -140;
                 const elementPosition =
                   element.getBoundingClientRect().top +
                   window.pageYOffset -
