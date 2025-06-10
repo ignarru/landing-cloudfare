@@ -81,11 +81,13 @@ const [brainUp, setBrainUp] = useState(false);
       setBrainUp(true);
       setTimeout(() => {
         setBrainDown(true);
-        setBrainUp(false);
+        setTimeout(() => {
+          setBrainUp(false);
+        }, 300);
         setTimeout(() => {
           setBrainHidden(true);
         }, 800);
-      }, 800);
+      }, 700);
     }, 1000);
   };
 
