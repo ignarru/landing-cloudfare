@@ -42,7 +42,7 @@ export default function About() {
             alt="Foto de Ignacio Arruvito"
             loading="lazy"
             decoding="async"
-            className={`w-full rounded-2xl shadow-lg transition-all duration-700 ${
+            className={`w-3/4 md:w-full mx-auto rounded-2xl shadow-lg transition-all duration-700 ${
               isMobile ? (imageInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10") : ""
             }`}
           />
@@ -55,10 +55,10 @@ export default function About() {
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
               Acerca de <span className="gradient-text">Mí</span>
             </h2>
-            <p className="text-iabyia-light text-lg leading-relaxed">
+            <p className="text-iabyia-light text-base md:text-lg leading-relaxed">
               Soy Ignacio Arruvito, consultor en inteligencia artificial y fundador de IAbyIA. Mi objetivo es ayudar a las empresas a adoptar soluciones de IA que impulsen su crecimiento y eficiencia.
             </p>
-            <p className="text-iabyia-light text-lg leading-relaxed mt-4">
+            <p className="text-iabyia-light text-base md:text-lg leading-relaxed mt-4">
               Cuento con amplia experiencia implementando proyectos de automatización y análisis predictivo para empresas de diversas industrias.
             </p>
 
