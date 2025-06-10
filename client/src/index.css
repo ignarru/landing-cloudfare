@@ -238,6 +238,10 @@
   .brain-fast-down {
     animation: brain-fast-down 0.8s ease-in forwards;
   }
+
+  .brain-up-down {
+    animation: brain-up-down 1.8s ease-in-out forwards;
+  }
   
   .animate-realign {
     animation: text-realign 1s ease-in-out forwards;
@@ -359,6 +363,18 @@
     transform: translateY(-30px);
   }
   to {
+    transform: translateY(120vh);
+  }
+}
+
+@keyframes brain-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  55% {
+    transform: translateY(-30px);
+  }
+  100% {
     transform: translateY(120vh);
   }
 }
