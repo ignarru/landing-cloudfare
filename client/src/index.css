@@ -228,7 +228,7 @@
   }
 
   .brain-slide-down {
-    animation: brain-slide-down 2s ease-in forwards;
+    animation: brain-slide-down 2s forwards;
   }
 
   .animate-realign {
@@ -321,12 +321,14 @@
   0% {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y));
     opacity: 1;
+    animation-timing-function: ease-out;
   }
   15% {
-    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 15px));
+    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 25px));
+    animation-timing-function: ease-in;
   }
-  30% {
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y));
+  25% {
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   60% {
     transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 60vh));
