@@ -19,8 +19,7 @@ export default function Hero() {
     { id: number; x: string; y: string; rot: string }[]
   >([]);
   const [buttonHidden, setButtonHidden] = useState(false);
-  const [realignText, setRealignText] = useState(false);
-
+  
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), HERO_DELAY_MS);
     return () => clearTimeout(timer);
@@ -40,7 +39,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (brainHidden) {
-      const timer = setTimeout(() => setShowQuestion(true), 500);
+      const timer = setTimeout(() => setShowQuestion(true), 800);
       return () => clearTimeout(timer);
     }
   }, [brainHidden]);
@@ -81,7 +80,6 @@ export default function Hero() {
       setTimeout(() => {
         setBrainHidden(true);
         setButtonHidden(true);
-        setRealignText(true);
       }, 800);
     }, 1700);
   };
@@ -96,9 +94,9 @@ export default function Hero() {
           layout
           className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          } ${realignText ? 'animate-realign' : ''}`}
+          }`}
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Transforma tu negocio con{" "}
             <span className="gradient-text">
               Inteligencia Artificial
@@ -228,13 +226,16 @@ export default function Hero() {
               className="mt-14 flex flex-col items-center"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
-                ¿Quieres conocer más?
+                ¿Querés conocer más?
               </p>
-              {showArrow && (
-                <ChevronDown
-                  className="w-8 h-8 text-iabyia-light animate-bounce"
-                />
-              )}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: showArrow ? 1 : 0 }}
+                transition={{ duration: 0.6 }}
+                className="mt-6"
+              >
+                <ChevronDown className="w-8 h-8 text-iabyia-light animate-bounce-slow" />
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
