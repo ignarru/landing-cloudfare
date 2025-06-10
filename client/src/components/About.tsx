@@ -42,7 +42,7 @@ export default function About() {
             alt="Foto de Ignacio Arruvito"
             loading="lazy"
             decoding="async"
-            className={`w-3/4 md:w-full mx-auto rounded-2xl shadow-lg transition-all duration-700 ${
+            className={`w-2/3 md:w-3/4 mx-auto rounded-2xl shadow-lg transition-all duration-700 ${
               isMobile ? (imageInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10") : ""
             }`}
           />
@@ -52,13 +52,13 @@ export default function About() {
               isMobile ? (textInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10") : ""
             }`}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Acerca de <span className="gradient-text">Mí</span>
             </h2>
-            <p className="text-iabyia-light text-base md:text-lg leading-relaxed">
+            <p className="text-iabyia-light text-sm md:text-base leading-relaxed">
               Soy Ignacio Arruvito, consultor en inteligencia artificial y fundador de IAbyIA. Mi objetivo es ayudar a las empresas a adoptar soluciones de IA que impulsen su crecimiento y eficiencia.
             </p>
-            <p className="text-iabyia-light text-base md:text-lg leading-relaxed mt-4">
+            <p className="text-iabyia-light text-sm md:text-base leading-relaxed mt-4">
               Cuento con amplia experiencia implementando proyectos de automatización y análisis predictivo para empresas de diversas industrias.
             </p>
 
@@ -67,7 +67,7 @@ export default function About() {
                 <div className="w-10 h-10 iabyia-accent rounded-lg flex items-center justify-center mr-4">
                   <Rocket className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-iabyia-light leading-relaxed">
+                <p className="text-iabyia-light text-sm md:text-base leading-relaxed">
                   Llevo la inteligencia artificial a emprendedores que quieren escalar con propósito y construir el futuro desde hoy.
                 </p>
               </div>
@@ -75,7 +75,7 @@ export default function About() {
                 <div className="w-10 h-10 iabyia-highlight rounded-lg flex items-center justify-center mr-4">
                   <Eye className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-iabyia-light leading-relaxed">
+                <p className="text-iabyia-light text-sm md:text-base leading-relaxed">
                   Aspiro a posicionar IAbyIA como la consultora referente para potenciar negocios con inteligencia artificial.
                 </p>
               </div>
