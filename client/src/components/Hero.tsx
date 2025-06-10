@@ -84,15 +84,16 @@ export default function Hero() {
         setTimeout(() => {
           setBrainHidden(true);
           setButtonHidden(true);
-       }, 800);
+        }, 800);
       }, 600);
     }, 1000);
   };
 
+  
   return (
     <section
       id="inicio"
-      className="min-h-screen md:min-h-[120vh] box-border flex flex-col items-center justify-center pt-32 md:pt-28 pb-20 scroll-mt-32 md:scroll-mt-28 px-4 sm:px-6"
+      className="min-h-screen md:min-h-screen box-border flex flex-col items-center justify-center pt-32 md:pt-28 pb-20 scroll-mt-32 md:scroll-mt-28 px-4 sm:px-6"
     >
         <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
