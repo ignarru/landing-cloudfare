@@ -102,8 +102,8 @@ export default function Hero() {
             <span className="gradient-text">Inteligencia Artificial</span>
           </h1>
           <p className="text-lg sm:text-xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
-            Automatización inteligente, análisis predictivo y optimización de procesos 
-            para llevar tu empresa al siguiente nivel
+            Automatización inteligente, análisis predictivo y optimización de
+            procesos para llevar tu empresa al siguiente nivel
           </p>
           <AnimatePresence>
             {!buttonHidden && (
@@ -121,7 +121,7 @@ export default function Hero() {
                   aria-label="Ir a la sección sobre mí"
                   type="button"
                   disabled={started}
-                  className={`iabyia-accent hover:opacity-90 text-white px-8 py-4 text-lg font-medium transform hover:scale-105 transition-all ${started ? 'pointer-events-none cursor-not-allowed animate-fade-out' : ''}`}
+                  className={`iabyia-accent hover:opacity-90 text-white px-8 py-4 text-lg font-medium transform hover:scale-105 transition-all ${started ? "pointer-events-none cursor-not-allowed animate-fade-out" : ""}`}
                 >
                   Comenzar Ahora
                 </Button>
@@ -134,111 +134,146 @@ export default function Hero() {
           {!brainHidden && (
             <div
               className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
             >
-              <div
-                className={`relative w-fit animate-float ${
-                  brainActive ? "animate-bounce" : ""
-               } ${brainExit ? "brain-slide-down" : ""} -translate-y-20 lg:-translate-y-24 xl:-translate-y-28 2xl:-translate-y-32`}
-              >
-                <InteractiveBrain
-                  className="mx-auto"
-                  active={brainActive}
-                  onInteraction={handleStartClick}
-                  started={started}
-                />
-              
-                <div className="absolute top-4 left-4 w-3 h-3 bg-blue-500 rounded-full animate-ping" />
-                <div className="absolute bottom-4 right-4 w-2 h-2 bg-blue-800 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+              <div className="relative w-fit -translate-y-20 lg:-translate-y-24 xl:-translate-y-28 2xl:-translate-y-32">
+                <div
+                  className={`animate-float ${
+                    brainActive ? "animate-bounce" : ""
+                  } ${brainExit ? "brain-slide-down" : ""}`}
+                >
+                  <InteractiveBrain
+                    className="mx-auto"
+                    active={brainActive}
+                    onInteraction={handleStartClick}
+                    started={started}
+                  />
 
-            {burstActive && (
-              <>
-                <span
-                  className="particle-burst"
-                  style={{
-                    '--burst-x': '40px',
-                    '--burst-y': '-20px',
-                  } as React.CSSProperties}
-                />
-                <span
-                  className="particle-burst"
-                  style={{
-                    '--burst-x': '-30px',
-                    '--burst-y': '-30px',
-                  } as React.CSSProperties}
-                />
-                <span
-                  className="particle-burst"
-                  style={{
-                    '--burst-x': '20px',
-                    '--burst-y': '35px',
-                  } as React.CSSProperties}
-                />
-              </>
-            )}
-
+            <div className="absolute top-4 left-4 w-3 h-3 bg-blue-500 rounded-full animate-ping" />
+                  <div
+                    className="absolute bottom-4 right-4 w-2 h-2 bg-blue-800 rounded-full animate-ping"
+                    style={{ animationDelay: "1s" }}
+                  />
             {sparkles.map((sp) => (
-              <Sparkles
-                key={sp.id}
-                className="sparkle-burst"
-                style={{
-                  '--burst-x': sp.x,
-                  '--burst-y': sp.y,
-                  '--burst-rot': sp.rot,
-                } as React.CSSProperties}
-                aria-hidden="true"
-              />
-            ))}
-            
-              <Sparkles
-                className={`absolute -bottom-3 right-4 w-6 h-6 text-accent animate-pulse ${starsExpanded ? 'star-expand' : ''}`}
-                style={{ '--star-x': '12px', '--star-y': '12px' } as React.CSSProperties}
-                aria-hidden="true"
-              />
-              <Sparkles
-                className={`absolute -bottom-3 left-4 w-4 h-4 text-blue-400 animate-pulse ${starsExpanded ? 'star-expand' : ''}`}
-                style={{ '--star-x': '-12px', '--star-y': '12px' } as React.CSSProperties}
-                aria-hidden="true"
-              />
-            <Sparkles
-                className={`absolute -top-3 left-4 w-6 h-6 text-accent animate-pulse ${starsExpanded ? 'star-expand' : ''}`}
-                style={{ '--star-x': '-12px', '--star-y': '-12px' } as React.CSSProperties}
-                aria-hidden="true"
-              />
-              <Sparkles
-                className={`absolute -top-3 right-4 w-4 h-4 text-blue-400 animate-pulse ${starsExpanded ? 'star-expand' : ''}`}
-                style={{ '--star-x': '12px', '--star-y': '-12px' } as React.CSSProperties}
-              />
-          </div>
-        </div>
-        )}
-        <AnimatePresence>
-          {showQuestion && (
-            <motion.div
-              key="question"
-              layout="position"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col items-center mt-8"
-            >
-              <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
-                ¿Querés conocer más?
-              </p>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: showArrow ? 1 : 0 }}
-                transition={{ duration: 0.6 }}
-                className="mt-6"
-              >
-                <ChevronDown className="w-8 h-8 text-iabyia-light animate-bounce-slow" />
-              </motion.div>
-            </motion.div>
+              {burstActive && (
+                    <>
+                      <span
+                        className="particle-burst"
+                        style={
+                          {
+                            "--burst-x": "40px",
+                            "--burst-y": "-20px",
+                          } as React.CSSProperties
+                        }
+                      />
+                      <span
+                        className="particle-burst"
+                        style={
+                          {
+                            "--burst-x": "-30px",
+                            "--burst-y": "-30px",
+                          } as React.CSSProperties
+                        }
+                      />
+                      <span
+                        className="particle-burst"
+                        style={
+                          {
+                            "--burst-x": "20px",
+                            "--burst-y": "35px",
+                          } as React.CSSProperties
+                        }
+                      />
+                    </>
+                  )}
+
+                  {sparkles.map((sp) => (
+                    <Sparkles
+                      key={sp.id}
+                      className="sparkle-burst"
+                      style={
+                        {
+                          "--burst-x": sp.x,
+                          "--burst-y": sp.y,
+                          "--burst-rot": sp.rot,
+                        } as React.CSSProperties
+                      }
+                      aria-hidden="true"
+                    />
+                  ))}
+
+                  <Sparkles
+                    className={`absolute -bottom-3 right-4 w-6 h-6 text-accent animate-pulse ${starsExpanded ? "star-expand" : ""}`}
+                    style={
+                      {
+                        "--star-x": "12px",
+                        "--star-y": "12px",
+                      } as React.CSSProperties
+                    }
+                    aria-hidden="true"
+                  />
+                  <Sparkles
+                    className={`absolute -bottom-3 left-4 w-4 h-4 text-blue-400 animate-pulse ${starsExpanded ? "star-expand" : ""}`}
+                    style={
+                      {
+                        "--star-x": "-12px",
+                        "--star-y": "12px",
+                      } as React.CSSProperties
+                    }
+                    aria-hidden="true"
+                  />
+                  <Sparkles
+                    className={`absolute -top-3 left-4 w-6 h-6 text-accent animate-pulse ${starsExpanded ? "star-expand" : ""}`}
+                    style={
+                      {
+                        "--star-x": "-12px",
+                        "--star-y": "-12px",
+                      } as React.CSSProperties
+                    }
+                    aria-hidden="true"
+                  />
+                  <Sparkles
+                    className={`absolute -top-3 right-4 w-4 h-4 text-blue-400 animate-pulse ${starsExpanded ? "star-expand" : ""}`}
+                    style={
+                      {
+                        "--star-x": "12px",
+                        "--star-y": "-12px",
+                      } as React.CSSProperties
+                    }
+                  />
+                </div>
+              </div>
+            </div>
           )}
-        </AnimatePresence>
-      </div>
+          <AnimatePresence>
+            {showQuestion && (
+              <motion.div
+                key="question"
+                layout="position"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.6 }}
+                className="flex flex-col items-center mt-8"
+              >
+                <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
+                  ¿Querés conocer más?
+                </p>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: showArrow ? 1 : 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="mt-6"
+                >
+                  <ChevronDown className="w-8 h-8 text-iabyia-light animate-bounce-slow" />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
