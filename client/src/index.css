@@ -228,7 +228,7 @@
   }
 
   .brain-drop-out {
-    animation: brain-drop-out 1.4s forwards;
+    animation: brain-drop-out 1.8s ease-in-out forwards;
   }
 
   .animate-realign {
@@ -323,21 +323,21 @@
     opacity: 1;
   }
   15% {
-    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 20px)) scale(1.05);
+    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 30px)) scale(1.05);
   }
-  30% {
+  45% {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) scale(1);
   }
-  40% {
-    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 10px));
+  50% {
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y));
   }
-  70% {
-    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 60vh)) rotate(-10deg) scale(0.85);
-    opacity: 0.8;
+  80% {
+    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 70vh)) rotate(-10deg) scale(0.85);
+    opacity: 1;
   }
   100% {
     transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 120vh)) rotate(-20deg) scale(0.6);
-    opacity: 0;
+    opacity: 1;
   }
 }
 
