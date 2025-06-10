@@ -69,6 +69,7 @@ export default function Hero() {
   const handleStartClick = () => {
     if (started) return;
     setStarted(true);
+    setTimeout(() => setButtonHidden(true), 600);
     setStarsExpanded(true);
     setTimeout(() => setStarsExpanded(false), 800);
     setBrainActive(true);
@@ -83,7 +84,6 @@ export default function Hero() {
         setBrainExit(true);
         setTimeout(() => {
           setBrainHidden(true);
-          setButtonHidden(true);
         }, 800);
       }, 600);
     }, 1000);
