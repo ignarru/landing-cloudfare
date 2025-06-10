@@ -98,13 +98,13 @@ export default function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           } ${realignText ? 'animate-realign' : ''}`}
         >
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Transforma tu negocio con{" "}
             <span className="gradient-text">
               Inteligencia Artificial
             </span>
           </h1>
-          <p className="text-xl sm:text-2xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
             Automatización inteligente, análisis predictivo y optimización de procesos 
             para llevar tu empresa al siguiente nivel
           </p>
