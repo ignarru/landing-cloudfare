@@ -135,7 +135,7 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
         
-        <div className="relative mt-8 md:mt-6 lg:mt-4 xl:mt-2 h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[28rem] flex flex-col items-center justify-center">
+        <div className="relative mt-8 md:mt-6 lg:mt-4 xl:mt-2 h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[28rem] flex flex-col items-center justify-center transform -translate-y-2 sm:-translate-y-4 md:-translate-y-6 lg:-translate-y-8 xl:-translate-y-10 2xl:-translate-y-12">
           {!brainHidden && (
             <div
               className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
