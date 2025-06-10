@@ -89,13 +89,13 @@ export default function Navigation() {
               Inicio
             </button>
             <button
-              onClick={() => scrollToSection("acerca", 60)}
+              onClick={() => scrollToSection("acerca", 80)}
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Acerca de mí
             </button>
             <button
-              onClick={() => scrollToSection("servicios", 60)}
+              onClick={() => scrollToSection("servicios", 80)}
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Servicios
@@ -154,13 +154,13 @@ export default function Navigation() {
                   Inicio
                 </button>
               <button
-                onClick={() => scrollToSection("acerca", 60)}
+                onClick={() => scrollToSection("acerca", 80)}
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
                 Acerca de mí
               </button>
               <button
-                onClick={() => scrollToSection("servicios", 60)}
+                onClick={() => scrollToSection("servicios", 80)}
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
                 Servicios
