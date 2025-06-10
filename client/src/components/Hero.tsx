@@ -11,7 +11,8 @@ export default function Hero() {
   const [burstActive, setBurstActive] = useState(false);
   const [starsExpanded, setStarsExpanded] = useState(false);
   const [started, setStarted] = useState(false);
-  const [brainExit, setBrainExit] = useState(false);
+const [brainUp, setBrainUp] = useState(false);
+  const [brainDown, setBrainDown] = useState(false);
   const [brainHidden, setBrainHidden] = useState(false);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
@@ -76,12 +77,16 @@ export default function Hero() {
     setSparkles(generateSparkles(8));
     setTimeout(() => {
       setBrainActive(false);
-      setBrainExit(true);
       setSparkles([]);
+      setBrainUp(true);
       setTimeout(() => {
-        setBrainHidden(true);
-      }, 2400);
-    }, 2000);
+        setBrainUp(false);
+        setBrainDown(true);
+        setTimeout(() => {
+          setBrainHidden(true);
+        }, 800);
+      }, 800);
+    }, 1000);
   };
 
   
@@ -143,9 +148,9 @@ export default function Hero() {
               } ${started ? "pointer-events-auto" : "pointer-events-none"}`}
             >
               <div
-                className={`relative w-fit animate-float ${
-                  brainExit ? "brain-drop-out" : ""
-                }`}
+                className={`relative w-fit ${started ? '' : 'animate-float'} ${
+                  brainUp ? 'brain-move-up' : ''
+                } ${brainDown ? 'brain-fast-down' : ''}`}
               >
                 <InteractiveBrain
                   className="mx-auto"
