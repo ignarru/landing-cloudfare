@@ -139,7 +139,7 @@ export default function Hero() {
             >
               <div
                 className={`relative w-fit animate-float ${
-                  brainActive ? "animate-bounce" : ""
+                  brainActive ? "animate-brain-bounce" : ""
                } ${
                   brainExit ? "brain-slide-down" : ""
                 }`}
