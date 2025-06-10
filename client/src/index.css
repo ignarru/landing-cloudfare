@@ -232,7 +232,7 @@
   }
 
   .brain-move-up {
-    animation: brain-move-up 0.8s ease-out forwards;
+    animation: brain-move-up 1s ease-out forwards;
   }
 
   .brain-fast-down {
@@ -350,7 +350,7 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-80px);
+    transform: translateY(-60px);
   }
 }
 
