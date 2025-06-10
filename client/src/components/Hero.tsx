@@ -85,7 +85,7 @@ const [brainMoving, setBrainMoving] = useState(false);
   return (
     <section
       id="inicio"
-      className="box-border flex flex-col items-center justify-center mt-24 min-h-[calc(100vh-6rem)] scroll-mt-24 px-4 sm:px-6"
+      className="box-border flex flex-col items-center justify-center min-h-screen pt-24 scroll-mt-24 px-4 sm:px-6"
     >
         <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
