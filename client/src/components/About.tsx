@@ -34,10 +34,6 @@ export default function About() {
       ref={sectionRef}
       className="py-16 sm:py-20 scroll-mt-32 md:scroll-mt-24"
     >
-      id="acerca"
-      ref={sectionRef}
-      className="py-16 sm:py-20 scroll-mt-28 md:scroll-mt-20"
-    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-700 ${
