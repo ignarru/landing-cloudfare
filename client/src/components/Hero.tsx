@@ -87,7 +87,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="h-screen box-border flex flex-col items-center justify-center pt-24 md:pt-20 scroll-mt-24 md:scroll-mt-20 px-4 sm:px-6"
+      className="h-screen box-border flex flex-col items-center justify-center pt-32 md:pt-28 scroll-mt-32 md:scroll-mt-28 px-4 sm:px-6"
     >
       <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
