@@ -101,8 +101,8 @@ export default function Hero() {
             <br />
             <span className="gradient-text">Inteligencia Artificial</span>
           </h1>
-          <p className="text-lg sm:text-xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
-            Automatización inteligente, análisis predictivo y optimización de procesos 
+          <p className="text-base sm:text-lg md:text-xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
+            Automatización inteligente, análisis predictivo y optimización de procesos
             para llevar tu empresa al siguiente nivel
           </p>
           <AnimatePresence>
@@ -130,7 +130,7 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
         
-        <div className="relative mt-8 md:mt-6 lg:mt-4 xl:mt-2 h-60 sm:h-72 md:h-80 lg:h-96 flex flex-col items-center justify-center">
+        <div className="relative mt-8 md:mt-6 lg:mt-4 xl:mt-2 h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[28rem] flex flex-col items-center justify-center">
           {!brainHidden && (
             <div
               className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
@@ -142,7 +142,7 @@ export default function Hero() {
                   brainActive ? "animate-bounce" : ""
                } ${
                   brainExit ? "brain-slide-down" : ""
-                } -translate-y-12 sm:-translate-y-14 md:-translate-y-16 lg:-translate-y-20 xl:-translate-y-24 2xl:-translate-y-28`}
+                } -translate-y-16 sm:-translate-y-20 md:-translate-y-24 lg:-translate-y-28 xl:-translate-y-32 2xl:-translate-y-36`}
               >
                 <InteractiveBrain
                   className="mx-auto"
