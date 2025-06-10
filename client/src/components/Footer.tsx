@@ -101,16 +101,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-iabyia-light">
-          <p>
-            &copy; 2025 IAbyIA. Todos los derechos reservados.
-            <button
-              id="manage-cookies"
-              type="button"
-              className="underline ml-2 text-accent"
-            >
-              Preferencias de cookies
-            </button>
-          </p>
+          <p>&copy; 2025 IAbyIA. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
