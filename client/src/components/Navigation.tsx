@@ -101,7 +101,7 @@ export default function Navigation() {
               Servicios
             </button>
             <button
-              onClick={() => scrollToSection("proceso", 100)}
+              onClick={() => scrollToSection("proceso", 110)}
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Proceso
@@ -166,7 +166,7 @@ export default function Navigation() {
                 Servicios
               </button>
               <button
-                onClick={() => scrollToSection("proceso", 100)}
+                onClick={() => scrollToSection("proceso", 110)}
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
                 Proceso
