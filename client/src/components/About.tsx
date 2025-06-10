@@ -32,7 +32,7 @@ export default function About() {
     <section
       id="acerca"
       ref={sectionRef}
-      className="py-16 sm:py-20 scroll-mt-32 md:scroll-mt-24"
+      className="py-16 sm:py-20 scroll-mt-36 md:scroll-mt-28"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
