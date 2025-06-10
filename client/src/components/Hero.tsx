@@ -84,7 +84,7 @@ export default function Hero() {
         setTimeout(() => {
           setBrainHidden(true);
           setButtonHidden(true);
-       }, 2000);
+       }, 4000);
       }, 600);
     }, 1000);
   };
