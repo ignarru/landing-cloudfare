@@ -18,6 +18,16 @@
     <meta name="twitter:title" content="IAbyIA - Inteligencia Artificial para tu Negocio" />
     <meta name="twitter:description" content="Transformamos tu negocio con soluciones de Inteligencia Artificial personalizadas. Optimización, automatización y crecimiento garantizado." />
     <meta name="twitter:image" content="/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IAbyIA",
+        "url": "https://www.iabyia.com/",
+        "logo": "/og-image.png"
+      }
+    </script>
     
     <!-- Favicon using brain logo -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -125,6 +135,13 @@
           banner.style.display = 'none';
           loadAnalytics();
         });
+        const manageBtn = document.getElementById('manage-cookies');
+        if (manageBtn) {
+          manageBtn.addEventListener('click', () => {
+            localStorage.removeItem(consentKey);
+            banner.style.display = 'flex';
+          });
+        }
       })();
     </script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
