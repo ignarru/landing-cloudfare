@@ -36,8 +36,8 @@ export const onRequestPost = async (context: any): Promise<Response> => {
       console.warn('Supabase credentials missing; logging submission');
       console.log('contact submission', parsed.data);
       lastSubmission.set(ip, Date.now());
-      return new Response(JSON.stringify({ message: 'ok' }), {
-        status: 201,
+      return new Response(JSON.stringify({ message: 'Service unavailable' }), {
+        status: 503,
         headers: { 'Content-Type': 'application/json' },
       });
     }
