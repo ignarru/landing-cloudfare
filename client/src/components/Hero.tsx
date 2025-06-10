@@ -8,6 +8,7 @@ import { HERO_DELAY_MS } from "@/lib/constants";
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const [brainActive, setBrainActive] = useState(false);
+  const [brainBounce, setBrainBounce] = useState(false);
   const [burstActive, setBurstActive] = useState(false);
   const [starsExpanded, setStarsExpanded] = useState(false);
   const [started, setStarted] = useState(false);
@@ -74,14 +75,18 @@ export default function Hero() {
     triggerBurst();
     setSparkles(generateSparkles(8));
     setTimeout(() => {
-      setSparkles([]);
       setBrainActive(false);
-      setBrainExit(true);
+      setBrainBounce(true);
+      setTimeout(() => setBrainBounce(false), 600);
       setTimeout(() => {
-        setBrainHidden(true);
-        setButtonHidden(true);
-      }, 800);
-    }, 1700);
+        setSparkles([]);
+        setBrainExit(true);
+        setTimeout(() => {
+          setBrainHidden(true);
+          setButtonHidden(true);
+        }, 800);
+      }, 600);
+    }, 1000);
   };
 
   return (
@@ -139,8 +144,8 @@ export default function Hero() {
             >
               <div
                 className={`relative w-fit animate-float ${
-                  brainActive ? "animate-brain-bounce" : ""
-               } ${
+                  brainBounce ? "animate-brain-bounce-once" : ""
+                } ${
                   brainExit ? "brain-slide-down" : ""
                 }`}
               >
