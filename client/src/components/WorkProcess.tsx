@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useInView } from "@/hooks/use-in-view";
 import { Search, Palette, Code, Zap } from "lucide-react";
 
@@ -42,10 +41,9 @@ const processSteps: ProcessStep[] = [
   }
 ];
 
-function StepItem({ step, index, visible }: { step: ProcessStep; index: number; visible: boolean }) {
-  const isMobile = useIsMobile();
+function StepItem({ step, index }: { step: ProcessStep; index: number }) {
   const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.2 });
-  const show = isMobile ? isInView : visible;
+  const show = isInView;
   return (
     <div
       ref={ref}
@@ -120,7 +118,7 @@ export default function WorkProcess() {
           <div className="process-timeline relative">
             <div className="space-y-12 md:space-y-16">
               {processSteps.map((step, index) => (
-                <StepItem key={step.number} step={step} index={index} visible={isVisible} />
+                <StepItem key={step.number} step={step} index={index} />
               ))}
             </div>
           </div>
