@@ -101,13 +101,13 @@ export default function Navigation() {
               Servicios
             </button>
             <button
-              onClick={() => scrollToSection("proceso", 110)}
+              onClick={() => scrollToSection("proceso", 120)}
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Proceso
             </button>
             <Button
-              onClick={() => scrollToSection("transformar", -50)}
+              onClick={() => scrollToSection("transformar", -30)}
               type="button"
               aria-label="Ir a la sección de consulta"
               className="fluid-button text-white font-medium px-6 py-2 rounded-full"
@@ -166,13 +166,13 @@ export default function Navigation() {
                 Servicios
               </button>
               <button
-                onClick={() => scrollToSection("proceso", 110)}
+                onClick={() => scrollToSection("proceso", 120)}
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
                 Proceso
               </button>
               <Button
-                onClick={() => scrollToSection("transformar", -50)}
+                onClick={() => scrollToSection("transformar", -30)}
                 type="button"
                 aria-label="Ir a la sección de consulta"
                 className="fluid-button text-white font-medium w-full"
