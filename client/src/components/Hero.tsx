@@ -80,8 +80,8 @@ export default function Hero() {
       setSparkles([]);
       setTimeout(() => {
         setBrainHidden(true);
-      }, 1800);
-    }, 1000);
+      }, 2400);
+    }, 2000);
   };
 
   
