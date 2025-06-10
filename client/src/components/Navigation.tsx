@@ -111,9 +111,9 @@ export default function Navigation() {
               onClick={() => scrollToSection("transformar", -100)}
               type="button"
               aria-label="Ir a la sección de consulta"
-              className="iabyia-accent hover:opacity-90 text-white font-medium px-6 py-2 rounded-full"
+              className="fluid-button text-white font-medium px-6 py-2 rounded-full"
             >
-              Consulta Gratis
+              <span>Consulta Gratis</span>
             </Button>
           </div>
           
@@ -176,9 +176,9 @@ export default function Navigation() {
                 onClick={() => scrollToSection("transformar", -100)}
                 type="button"
                 aria-label="Ir a la sección de consulta"
-                className="iabyia-accent hover:opacity-90 text-white font-medium w-full"
+                className="fluid-button text-white font-medium w-full"
               >
-                Consulta Gratis
+                <span>Consulta Gratis</span>
               </Button>
             </div>
           </motion.div>
