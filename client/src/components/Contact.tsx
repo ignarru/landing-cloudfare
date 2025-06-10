@@ -122,26 +122,11 @@ export default function Contact() {
             Agenda una consulta gratuita y descubre cómo la IA puede revolucionar tu empresa
           </p>
           <Button
-            onClick={() => {
-              const element = document.getElementById("contacto");
-              if (element) {
-                const nav = document.querySelector("nav");
-                const navHeight = (nav as HTMLElement)?.offsetHeight ?? 0;
-                // Scroll a bit further down so the form is fully visible
-                const offset = window.innerWidth < 768 ? 100 : 150;
-                const elementPosition =
-                  element.getBoundingClientRect().top +
-                  window.pageYOffset -
-                  navHeight +
-                  offset;
-                window.scrollTo({ top: elementPosition, behavior: "smooth" });
-              }
-            }}
-            type="button"
+            asChild
             aria-label="Ir al formulario de contacto"
             className="bg-white text-accent hover:bg-gray-100 px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all"
           >
-            Agendar Consulta Gratuita
+            <a href="#contacto">Agendar Consulta Gratuita</a>
           </Button>
         </div>
       </section>
@@ -150,7 +135,7 @@ export default function Contact() {
       <section
         id="contacto"
         ref={formRef}
-        className={`py-16 sm:py-20 text-center transition-all duration-700 ${
+        className={`py-16 sm:py-20 text-center transition-all duration-700 scroll-mt-36 md:scroll-mt-28 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
