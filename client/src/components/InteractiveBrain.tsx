@@ -13,9 +13,11 @@ export default function InteractiveBrain({
   started,
 }: Props) {
   return (
-    <div
+    <button
+      type="button"
+      aria-label="Activar animación"
       className={cn(
-        "w-20 h-20 mx-auto relative md:w-28 md:h-28",
+        "w-20 h-20 mx-auto relative md:w-28 md:h-28 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
         className,
         active && "animate-brain-spin",
         started && "pointer-events-none"
@@ -26,6 +28,6 @@ export default function InteractiveBrain({
       <div className="absolute inset-2 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
         <DetailedBrain className="w-16 h-16 text-white md:w-24 md:h-24" aria-hidden="true" />
       </div>
-    </div>
+    </button>
   );
 }
