@@ -20,6 +20,20 @@ export default function Contact() {
   const formRef = useRef<HTMLElement>(null);
   const { toast } = useToast();
 
+  const scrollToContact = () => {
+    const element = document.getElementById("contacto");
+    if (element) {
+      const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
+      const extraOffset = window.innerWidth < 768 ? 0 : -40;
+      const elementPosition =
+        element.getBoundingClientRect().top +
+        window.pageYOffset -
+        navHeight +
+        extraOffset;
+      window.scrollTo({ top: elementPosition, behavior: "smooth" });
+    }
+  };
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
