@@ -140,7 +140,7 @@ export default function Hero() {
               <div
                 className={`relative w-fit animate-float ${
                   brainActive ? "animate-bounce" : ""
-                } ${brainExit ? "brain-slide-down" : ""} -translate-y-4 lg:-translate-y-8`}
+                } ${brainExit ? "brain-slide-down" : ""} -translate-y-8 lg:-translate-y-12`}
               >
                 <InteractiveBrain
                   className="mx-auto"
