@@ -242,6 +242,10 @@
   .animate-brain-bounce {
     animation: brain-bounce 1.6s infinite;
   }
+
+  .animate-brain-bounce-once {
+    animation: brain-bounce-once 0.6s forwards;
+  }
 }
 
 @keyframes float {
@@ -359,6 +363,20 @@
   50% {
     transform: translateY(-12px);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes brain-bounce-once {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: translateY(-18px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
