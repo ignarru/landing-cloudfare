@@ -67,3 +67,8 @@ When deploying, ensure required environment variables—such as `SUPABASE_URL` a
 
 A personal "Acerca de mí" section appears before the services listing. You can edit the content in `client/src/components/About.tsx` and replace the photo at `client/public/profile.png`.
 
+## License
+
+This project is distributed under the [MIT license](LICENSE). The same license is
+declared in the `license` field of [package.json](package.json) for tooling
+compatibility.
