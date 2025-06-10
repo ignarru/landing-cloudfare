@@ -80,7 +80,7 @@ export default function Hero() {
       setSparkles([]);
       setTimeout(() => {
         setBrainHidden(true);
-      }, 1400);
+      }, 1800);
     }, 1000);
   };
 
@@ -226,7 +226,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col items-center mt-8"
+              className="flex flex-col items-center mt-12"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
                 ¿Querés conocer más?
