@@ -166,6 +166,35 @@
   .text-iabyia-highlight {
     color: hsl(var(--iabyia-highlight));
   }
+
+  .fluid-button {
+    position: relative;
+    overflow: hidden;
+    background-color: hsl(var(--iabyia-highlight));
+  }
+
+  .fluid-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(var(--iabyia-accent));
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    border-radius: inherit;
+    z-index: 0;
+  }
+
+  .fluid-button:hover::after {
+    transform: translateY(0);
+  }
+
+  .fluid-button > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @layer utilities {
