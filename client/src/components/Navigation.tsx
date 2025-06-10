@@ -172,7 +172,7 @@ export default function Navigation() {
                 Proceso
               </button>
               <Button
-                onClick={() => scrollToSection("transformar", -100)}
+                onClick={() => scrollToSection("transformar", -160)}
                 type="button"
                 aria-label="Ir a la sección de consulta"
                 className="fluid-button text-white font-medium w-full"
