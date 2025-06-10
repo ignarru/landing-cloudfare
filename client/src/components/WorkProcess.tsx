@@ -116,7 +116,7 @@ export default function WorkProcess() {
         <div className="relative">
           {/* Timeline - Fixed positioning */}
           <div className="process-timeline relative">
-            <div className="space-y-12 md:space-y-16">
+            <div className="space-y-16 md:space-y-20">
               {processSteps.map((step, index) => (
                 <StepItem key={step.number} step={step} index={index} />
               ))}
