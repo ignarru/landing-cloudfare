@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Brain, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { HERO_DELAY_MS } from "@/lib/constants";
+import { HERO_DELAY_MS, CONTACT_EXTRA_OFFSET } from "@/lib/constants";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -107,9 +107,16 @@ export default function Navigation() {
               Proceso
             </button>
             <Button
-              onClick={() => scrollToSection("transformar")}
+              onClick={() =>
+                scrollToSection(
+                  "contacto",
+                  isMobile
+                    ? CONTACT_EXTRA_OFFSET.mobile
+                    : CONTACT_EXTRA_OFFSET.desktop
+                )
+              }
               type="button"
-              aria-label="Ir a la sección de consulta"
+              aria-label="Ir al formulario de contacto"
               className="fluid-button text-white font-medium px-6 py-2 rounded-full"
             >
               <span>Consulta Gratis</span>
@@ -172,9 +179,16 @@ export default function Navigation() {
                 Proceso
               </button>
               <Button
-                onClick={() => scrollToSection("transformar")}
+                onClick={() =>
+                  scrollToSection(
+                    "contacto",
+                    isMobile
+                      ? CONTACT_EXTRA_OFFSET.mobile
+                      : CONTACT_EXTRA_OFFSET.desktop
+                  )
+                }
                 type="button"
-                aria-label="Ir a la sección de consulta"
+                aria-label="Ir al formulario de contacto"
                 className="fluid-button text-white font-medium w-full"
               >
                 <span>Consulta Gratis</span>
