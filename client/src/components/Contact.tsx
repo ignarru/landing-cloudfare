@@ -24,7 +24,8 @@ export default function Contact() {
     const element = document.getElementById("contacto");
     if (element) {
       const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
-      const extraOffset = window.innerWidth < 768 ? 0 : -40;
+      // Scroll a bit further so the form is fully visible after navigation
+      const extraOffset = window.innerWidth < 768 ? -40 : -80;
       const elementPosition =
         element.getBoundingClientRect().top +
         window.pageYOffset -
