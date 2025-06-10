@@ -228,7 +228,7 @@
   }
 
   .brain-slide-down {
-    animation: brain-slide-down 2s forwards;
+    animation: brain-slide-down 2s ease-in forwards;
   }
 
   .animate-realign {
@@ -311,17 +311,20 @@
 
 @keyframes brain-slide-down {
   0% {
-    transform: translateY(0);
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y));
     opacity: 1;
   }
-  20% {
-    transform: translateY(-20px);
+  15% {
+    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 15px));
   }
   30% {
-    transform: translateY(0);
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y));
+  }
+  60% {
+    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 60vh));
   }
   100% {
-    transform: translateY(120vh);
+    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 120vh));
     opacity: 0;
   }
 }
