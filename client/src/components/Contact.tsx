@@ -127,7 +127,8 @@ export default function Contact() {
               if (element) {
                 const nav = document.querySelector("nav");
                 const navHeight = (nav as HTMLElement)?.offsetHeight ?? 0;
-                const offset = window.innerWidth < 768 ? -100 : 0;
+                // Scroll a bit further down so the form is fully visible
+                const offset = window.innerWidth < 768 ? 100 : 150;
                 const elementPosition =
                   element.getBoundingClientRect().top +
                   window.pageYOffset -
