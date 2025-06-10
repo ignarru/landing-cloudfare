@@ -69,6 +69,7 @@ export default function Hero() {
   const handleStartClick = () => {
     if (started) return;
     setStarted(true);
+     setTimeout(() => setButtonHidden(true), 600);
     setTimeout(() => setButtonHidden(true), 600);
     setStarsExpanded(true);
     setTimeout(() => setStarsExpanded(false), 800);
@@ -141,7 +142,7 @@ export default function Hero() {
             <div
               className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              } ${started ? "pointer-events-auto" : "pointer-events-none"}`}
             >
               <div
                 className={`relative w-fit animate-float ${
