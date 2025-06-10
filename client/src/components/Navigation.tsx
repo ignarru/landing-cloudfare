@@ -41,7 +41,13 @@ export default function Navigation() {
     const element = document.getElementById(sectionId);
     if (element) {
       const navHeight = barRef.current?.offsetHeight ?? 0;
-      const extraOffset = isMobile ? 0 : -80;
+      // Adjust scroll offset so the target section aligns
+      // correctly below the fixed navigation bar. The previous
+      // implementation subtracted an additional 80px on desktop,
+      // which caused sections to appear too high when navigating
+      // between anchors. We now rely solely on the nav height
+      // to compute the offset for all viewports.
+      const extraOffset = 0;
       const elementPosition =
         element.getBoundingClientRect().top +
         window.pageYOffset -
