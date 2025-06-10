@@ -231,6 +231,14 @@
     animation: brain-drop-out 2.4s ease-in-out forwards;
   }
 
+  .brain-move-up {
+    animation: brain-move-up 0.8s ease-out forwards;
+  }
+
+  .brain-fast-down {
+    animation: brain-fast-down 0.8s ease-in forwards;
+  }
+  
   .animate-realign {
     animation: text-realign 1s ease-in-out forwards;
   }
@@ -334,6 +342,24 @@
   100% {
     transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 120vh)) rotate(-20deg) scale(0.6);
     opacity: 1;
+  }
+}
+
+@keyframes brain-move-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-80px);
+  }
+}
+
+@keyframes brain-fast-down {
+  from {
+    transform: translateY(-80px);
+  }
+  to {
+    transform: translateY(120vh);
   }
 }
 
