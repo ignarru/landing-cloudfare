@@ -49,17 +49,19 @@ When deploying, ensure required environment variables—such as `SUPABASE_URL` a
 
 1. In your Cloudflare dashboard create a new Pages project and connect this
    repository.
-2. If the build fails saying "npm ci" cannot install dependencies, run `npm install` locally to generate a `package-lock.json` and commit it.
-3. **Leave the Root Directory empty** (i.e. use the repository root). If you
+2. If the build fails saying "npm ci" cannot install dependencies, run `npm install` locally to generate a `package-lock.json`.
+3. Confirm `package-lock.json` is committed and pushed before deploying. You can
+   verify the commit being built by checking the commit hash in the Pages build logs.
+4. **Leave the Root Directory empty** (i.e. use the repository root). If you
    select a subfolder (for example `client`), Cloudflare runs `npm ci` in that
    directory and fails because it lacks a `package-lock.json`.
-4. Set the **Build command** to `npm run build` and the **Build output
+5. Set the **Build command** to `npm run build` and the **Build output
    directory** to `dist/public`.
-5. Add your Supabase credentials (`SUPABASE_URL` and
+6. Add your Supabase credentials (`SUPABASE_URL` and
    `SUPABASE_SERVICE_ROLE_KEY`) in the **Environment Variables** section.
-6. Deploy the site. The contact form will post to `/api/contact`, which is
+7. Deploy the site. The contact form will post to `/api/contact`, which is
    implemented as a Pages Function under `functions/api/contact.ts`.
-7. For local development run `npm run dev` after building to simulate the
+8. For local development run `npm run dev` after building to simulate the
    production environment. Copy `.dev.vars.example` to `.dev.vars` and fill in
    your Supabase credentials so the function can access them locally.
    
