@@ -205,6 +205,10 @@
   .animate-realign {
     animation: text-realign 1s ease-in-out forwards;
   }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s infinite;
+  }
 }
 
 @keyframes float {
@@ -277,11 +281,17 @@
 }
 
 @keyframes brain-slide-down {
-  from {
+  0% {
     transform: translateY(0);
     opacity: 1;
   }
-  to {
+  20% {
+    transform: translateY(-20px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  100% {
     transform: translateY(120vh);
     opacity: 0;
   }
@@ -293,6 +303,15 @@
   }
   to {
     transform: translateY(-40px);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
