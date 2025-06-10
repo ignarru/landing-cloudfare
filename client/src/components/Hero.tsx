@@ -89,18 +89,17 @@ export default function Hero() {
       id="inicio"
       className="min-h-screen flex items-center justify-center pt-28 md:pt-20 scroll-mt-28 md:scroll-mt-20 pb-24 px-4"
     >
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center relative">
         <motion.div
           layout
           className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            Transforma tu negocio con{" "}
-            <span className="gradient-text">
-              Inteligencia Artificial
-            </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Transforma tu negocio con
+            <br />
+            <span className="gradient-text">Inteligencia Artificial</span>
           </h1>
           <p className="text-lg sm:text-xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
             Automatización inteligente, análisis predictivo y optimización de procesos 
@@ -131,27 +130,27 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
         
-        {/* Floating AI Brain Illustration */}
-        {!brainHidden && (
-          <div
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
+        <div className="relative mt-8 h-60 sm:h-72">
+          {!brainHidden && (
             <div
-              className={`relative w-fit mx-auto animate-float ${
-                brainActive ? "animate-bounce" : ""
-              } ${brainExit ? "brain-slide-down" : ""}`}
+              className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
             >
-            <InteractiveBrain
-              className="mx-auto"
-              active={brainActive}
-              onInteraction={handleStartClick}
-              started={started}
-            />
-
-            <div className="absolute top-4 left-4 w-3 h-3 bg-blue-500 rounded-full animate-ping" />
-            <div className="absolute bottom-4 right-4 w-2 h-2 bg-blue-800 rounded-full animate-ping" style={{ animationDelay: "1s" }} />
+            <div
+                className={`relative w-fit animate-float ${
+                  brainActive ? "animate-bounce" : ""
+                } ${brainExit ? "brain-slide-down" : ""}`}
+              >
+                <InteractiveBrain
+                  className="mx-auto"
+                  active={brainActive}
+                  onInteraction={handleStartClick}
+                  started={started}
+                />
+              
+                <div className="absolute top-4 left-4 w-3 h-3 bg-blue-500 rounded-full animate-ping" />
+                <div className="absolute bottom-4 right-4 w-2 h-2 bg-blue-800 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
 
             {burstActive && (
               <>
