@@ -69,6 +69,20 @@ When deploying, ensure required environment variables—such as `SUPABASE_URL` a
 
 A personal "Acerca de mí" section appears before the services listing. You can edit the content in `client/src/components/About.tsx` and replace the photo at `client/public/profile.png`.
 
+## Contact scroll offset
+
+The scroll offset used when navigating to the contact form is exported as `CONTACT_EXTRA_OFFSET` in `client/src/lib/constants.ts` and can be overridden by passing an `offset` prop to `Contact`.
+
+```tsx
+import Contact from "./Contact";
+import { CONTACT_EXTRA_OFFSET } from "@/lib/constants";
+
+// Increase desktop offset
+const customOffset = { ...CONTACT_EXTRA_OFFSET, desktop: -200 };
+
+<Contact offset={customOffset} />;
+```
+
 ## License
 
 This project is distributed under the [MIT license](LICENSE). The same license is
