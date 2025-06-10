@@ -44,7 +44,9 @@ export default function Navigation() {
       // Add a bit of spacing on desktop so the section heading
       // isn't flush against the navigation bar when scrolled.
       // Mobile retains the default behaviour.
-      const extraOffset = isMobile ? 0 : -80;
+      // Slightly reduce the desktop offset so that section headings
+      // are positioned more naturally below the navigation bar.
+      const extraOffset = isMobile ? 0 : -40;
       const elementPosition =
         element.getBoundingClientRect().top +
         window.pageYOffset -
