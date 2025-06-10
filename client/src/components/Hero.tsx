@@ -85,7 +85,7 @@ export default function Hero() {
         setBrainExit(true);
         setTimeout(() => {
           setBrainHidden(true);
-        }, 800);
+        }, 1800);
       }, 600);
     }, 1000);
   };
@@ -148,13 +148,12 @@ export default function Hero() {
                 className={`relative w-fit animate-float ${
                   brainBounce ? "animate-brain-bounce-once" : ""
                 } ${
-                  brainExit ? "brain-slide-down" : ""
+                  brainExit ? "brain-fly-out" : ""
                 }`}
               >
                 <InteractiveBrain
                   className="mx-auto"
                   active={brainActive}
-                  onInteraction={handleStartClick}
                   started={started}
                 />
               
