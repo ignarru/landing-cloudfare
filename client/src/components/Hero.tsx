@@ -11,8 +11,7 @@ export default function Hero() {
   const [burstActive, setBurstActive] = useState(false);
   const [starsExpanded, setStarsExpanded] = useState(false);
   const [started, setStarted] = useState(false);
-const [brainUp, setBrainUp] = useState(false);
-  const [brainDown, setBrainDown] = useState(false);
+const [brainMoving, setBrainMoving] = useState(false);
   const [brainHidden, setBrainHidden] = useState(false);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
@@ -78,16 +77,7 @@ const [brainUp, setBrainUp] = useState(false);
     setTimeout(() => {
       setBrainActive(false);
       setSparkles([]);
-      setBrainUp(true);
-      setTimeout(() => {
-        setBrainDown(true);
-        setTimeout(() => {
-          setBrainUp(false);
-        }, 300);
-        setTimeout(() => {
-          setBrainHidden(true);
-        }, 800);
-      }, 700);
+      setBrainMoving(true);
     }, 1000);
   };
 
@@ -151,8 +141,14 @@ const [brainUp, setBrainUp] = useState(false);
             >
               <div
                 className={`relative w-fit ${started ? '' : 'animate-float'} ${
-                  brainUp ? 'brain-move-up' : ''
-                } ${brainDown ? 'brain-fast-down' : ''}`}
+                  brainMoving ? 'brain-up-down' : ''
+                }`}
+                onAnimationEnd={() => {
+                  if (brainMoving) {
+                    setBrainHidden(true);
+                    setBrainMoving(false);
+                  }
+                }}
               >
                 <InteractiveBrain
                   className="mx-auto"
