@@ -137,10 +137,10 @@ export default function Hero() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-            <div
+              <div
                 className={`relative w-fit animate-float ${
                   brainActive ? "animate-bounce" : ""
-                } ${brainExit ? "brain-slide-down" : ""} lg:-translate-y-4`}
+                } ${brainExit ? "brain-slide-down" : ""} -translate-y-4 lg:-translate-y-8`}
               >
                 <InteractiveBrain
                   className="mx-auto"
@@ -222,7 +222,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="absolute inset-x-0 bottom-0 flex flex-col items-center"
+              className="absolute inset-x-0 bottom-8 flex flex-col items-center"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
                 ¿Querés conocer más?
