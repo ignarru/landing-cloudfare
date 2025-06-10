@@ -137,7 +137,7 @@ export default function Contact() {
             Agenda una consulta gratuita y descubre cómo la IA puede revolucionar tu empresa
           </p>
           <Button
-            onClick={scrollToContact}
+            onClick={scrollToContact, 100}
             aria-label="Ir al formulario de contacto"
             className="bg-white text-accent hover:bg-gray-100 px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all"
           >
