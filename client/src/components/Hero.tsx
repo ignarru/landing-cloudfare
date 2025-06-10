@@ -217,12 +217,12 @@ export default function Hero() {
           {showQuestion && (
             <motion.div
               key="question"
-              layout
+              layout="position"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="mt-14 flex flex-col items-center"
+              className="absolute inset-x-0 bottom-0 flex flex-col items-center"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
                 ¿Querés conocer más?
@@ -238,6 +238,7 @@ export default function Hero() {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
       </div>
     </section>
   );
