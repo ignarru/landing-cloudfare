@@ -87,9 +87,9 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex items-center justify-center pt-28 md:pt-20 scroll-mt-28 md:scroll-mt-20 pb-24 px-4"
+      className="min-h-screen flex flex-col items-center justify-center pt-28 md:pt-20 scroll-mt-28 md:scroll-mt-20 pb-10 px-4"
     >
-      <div className="max-w-7xl mx-auto text-center relative">
+      <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
           layout
           className={`transition-all duration-1000 ${
@@ -130,7 +130,7 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
         
-        <div className="relative mt-8 md:mt-6 lg:mt-4 xl:mt-2 h-60 sm:h-72 md:h-80 lg:h-96">
+        <div className="relative mt-8 md:mt-6 lg:mt-4 xl:mt-2 h-60 sm:h-72 md:h-80 lg:h-96 flex flex-col items-center justify-center">
           {!brainHidden && (
             <div
               className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
@@ -222,7 +222,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="absolute inset-x-0 bottom-8 md:bottom-6 lg:bottom-4 flex flex-col items-center"
+              className="flex flex-col items-center mt-8"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
                 ¿Querés conocer más?
