@@ -223,29 +223,29 @@
   }
 
   .animate-brain-spin {
-    animation: brain-spin 1.2s ease-in-out forwards;
+    animation: brain-spin 1.4s ease-in-out forwards;
     transform-style: preserve-3d;
   }
 
   .brain-drop-out {
-    animation: brain-drop-out 2.4s ease-in-out forwards;
+    animation: brain-drop-out 2.6s ease-in-out forwards;
   }
 
   .brain-move-up {
-    animation: brain-move-up 1.2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+    animation: brain-move-up 1.4s cubic-bezier(0.42, 0, 0.58, 1) forwards;
   }
 
   .brain-rise {
     /* Use a smoother cubic-bezier curve for a more fluid ascent */
-    animation: brain-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: brain-rise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
   
   .brain-fast-down {
-    animation: brain-fast-down 0.8s ease-in forwards;
+    animation: brain-fast-down 1s ease-in-out forwards;
   }
 
   .brain-up-down {
-    animation: brain-fall 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: brain-fall 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
   
   .animate-realign {
@@ -257,11 +257,11 @@
   }
 
   .animate-brain-bounce {
-    animation: brain-bounce 1.6s infinite;
+    animation: brain-bounce 1.8s infinite;
   }
 
   .animate-brain-bounce-once {
-    animation: brain-bounce-once 0.6s forwards;
+    animation: brain-bounce-once 0.8s forwards;
   }
 }
 
@@ -367,16 +367,8 @@
   0% {
     transform: translateY(0);
   }
-  /* subtle start */
-  20% {
-    transform: translateY(-5px);
-  }
-  /* gradual lift */
-  40% {
+  50% {
     transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-15px);
   }
   100% {
     transform: translateY(-20px);
@@ -397,8 +389,11 @@
     transform: translateY(-20px);
     opacity: 1;
   }
-  70% {
-    transform: translateY(80vh);
+  50% {
+    transform: translateY(40vh);
+  }
+  80% {
+    transform: translateY(90vh);
   }
   100% {
     transform: translateY(120vh);
