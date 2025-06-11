@@ -6,7 +6,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import {
   HERO_DELAY_MS,
   ABOUT_EXTRA_OFFSET,
-  CONSULTA_EXTRA_OFFSET
+  CONSULTA_EXTRA_OFFSET,
+  SERVICES_EXTRA_OFFSET
 } from "@/lib/constants";
 
 export default function Navigation() {
