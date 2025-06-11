@@ -240,7 +240,7 @@
   }
 
   .brain-up-down {
-    animation: brain-up-down 1.8s ease-in-out forwards;
+    animation: brain-up-down 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
   
   .animate-realign {
@@ -371,8 +371,11 @@
   0% {
     transform: translateY(-25px);
   }
-  55% {
-    transform: translateY(-30px);
+  40% {
+    transform: translateY(-35px);
+  }
+  65% {
+    transform: translateY(0);
   }
   100% {
     transform: translateY(120vh);
