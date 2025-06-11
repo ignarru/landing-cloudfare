@@ -1,6 +1,6 @@
 export const HERO_DELAY_MS = 600;
 
 export const CONTACT_EXTRA_OFFSET = {
-  mobile: -160,
-  desktop: -220
+  mobile: -200,
+  desktop: -260
 };
