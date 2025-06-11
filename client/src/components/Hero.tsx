@@ -11,7 +11,8 @@ export default function Hero() {
   const [burstActive, setBurstActive] = useState(false);
   const [starsExpanded, setStarsExpanded] = useState(false);
   const [started, setStarted] = useState(false);
-const [brainMoving, setBrainMoving] = useState(false);
+const [brainAscending, setBrainAscending] = useState(false);
+  const [brainMoving, setBrainMoving] = useState(false);
   const [brainHidden, setBrainHidden] = useState(false);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showArrow, setShowArrow] = useState(false);
@@ -77,7 +78,7 @@ const [brainMoving, setBrainMoving] = useState(false);
     setTimeout(() => {
       setBrainActive(false);
       setSparkles([]);
-      setBrainMoving(true);
+     setBrainAscending(true);
     }, 1000);
   };
 
@@ -141,10 +142,13 @@ const [brainMoving, setBrainMoving] = useState(false);
             >
               <div
                 className={`relative w-fit ${started ? '' : 'animate-float'} ${
-                  brainMoving ? 'brain-up-down' : ''
-                }`}
-                onAnimationEnd={() => {
-                  if (brainMoving) {
+                  brainAscending ? 'brain-move-up' : ''
+                } ${brainMoving ? 'brain-up-down' : ''}`}
+                onAnimationEnd={(e) => {
+                  if (e.animationName === 'brain-move-up') {
+                    setBrainAscending(false);
+                    setBrainMoving(true);
+                  } else if (e.animationName === 'brain-up-down' && brainMoving) {
                     setBrainHidden(true);
                     setBrainMoving(false);
                   }
