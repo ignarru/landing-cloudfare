@@ -29,20 +29,21 @@ export default function Contact({
 
   const scrollToContact = (customOffset = offset) => {
     const element = document.getElementById("contacto");
-    if (element) {
-      const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
-      // Scroll further down so the entire form section is visible
-      const offsetValue =
-        window.innerWidth < 768
-          ? customOffset.mobile
-          : customOffset.desktop;
-      const elementPosition =
-        element.getBoundingClientRect().top +
-        window.pageYOffset -
-        navHeight +
-        offsetValue;
-      window.scrollTo({ top: elementPosition, behavior: "smooth" });
-    }
+    if (!element) return;
+
+    const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
+    // Scroll further down so the entire form section is fully visible
+    const offsetValue =
+      window.innerWidth < 768
+        ? customOffset.mobile
+        : customOffset.desktop;
+    const elementPosition =
+      element.getBoundingClientRect().top +
+      window.pageYOffset -
+      navHeight -
+      offsetValue;
+
+    window.scrollTo({ top: elementPosition, behavior: "smooth" });
   };
   
   useEffect(() => {
