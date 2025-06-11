@@ -38,8 +38,7 @@ export default function Contact({
         ? customOffset.mobile
         : customOffset.desktop;
     const elementPosition =
-      element.getBoundingClientRect().top +
-      window.pageYOffset -
+      element.offsetTop -
       navHeight -
       offsetValue;
 
