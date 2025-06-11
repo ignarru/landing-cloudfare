@@ -79,7 +79,7 @@ const [brainAscending, setBrainAscending] = useState(false);
       setBrainActive(false);
       setSparkles([]);
       setBrainAscending(true);
-    }, 300);
+    }, 1200);
   };
 
   
