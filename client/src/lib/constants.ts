@@ -7,7 +7,7 @@ export const CONTACT_EXTRA_OFFSET = {
 
 export const ABOUT_EXTRA_OFFSET = {
   mobile: 70,
-  desktop: 160
+  desktop: 155
 };
 
 export const CONSULTA_EXTRA_OFFSET = {
@@ -16,6 +16,6 @@ export const CONSULTA_EXTRA_OFFSET = {
 };
 
 export const SERVICES_EXTRA_OFFSET = {
-  mobile: 150,
+  mobile: 100,
   desktop: 110
 };
