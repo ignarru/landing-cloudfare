@@ -40,14 +40,14 @@ const [brainAscending, setBrainAscending] = useState(false);
 
   useEffect(() => {
     if (brainHidden) {
-      const timer = setTimeout(() => setShowQuestion(true), 800);
+      const timer = setTimeout(() => setShowQuestion(true), 400);
       return () => clearTimeout(timer);
     }
   }, [brainHidden]);
 
   useEffect(() => {
     if (showQuestion) {
-      const timer = setTimeout(() => setShowArrow(true), 1000);
+      const timer = setTimeout(() => setShowArrow(true), 600);
       return () => clearTimeout(timer);
     }
   }, [showQuestion]);
@@ -91,7 +91,7 @@ const [brainAscending, setBrainAscending] = useState(false);
         <div className="max-w-7xl mx-auto text-center w-full">
         <motion.div
           layout
-          className={`transition-all duration-1000 ${
+          className={`relative z-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
