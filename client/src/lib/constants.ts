@@ -16,6 +16,6 @@ export const CONSULTA_EXTRA_OFFSET = {
 };
 
 export const SERVICES_EXTRA_OFFSET = {
-  mobile: 150,
+  mobile: 10,
   desktop: 110
 };
