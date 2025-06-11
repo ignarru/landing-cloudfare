@@ -32,15 +32,16 @@ export default function Contact({
     if (!element) return;
 
     const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
-    // Scroll further down so the entire form section is fully visible
     const offsetValue =
-      window.innerWidth < 768
-        ? customOffset.mobile
-        : customOffset.desktop;
+      window.innerWidth < 768 ? customOffset.mobile : customOffset.desktop;
+
+    // Center the form when possible so it is fully visible
+    const formHeight = element.offsetHeight;
+    const availableSpace = window.innerHeight - formHeight;
+    const centerOffset = availableSpace > 0 ? availableSpace / 2 : 0;
+    
     const elementPosition =
-      element.offsetTop -
-      navHeight -
-      offsetValue;
+      element.offsetTop - navHeight - offsetValue - centerOffset;
 
     window.scrollTo({ top: elementPosition, behavior: "smooth" });
   };
