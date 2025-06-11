@@ -78,8 +78,8 @@ const [brainAscending, setBrainAscending] = useState(false);
     setTimeout(() => {
       setBrainActive(false);
       setSparkles([]);
-     setBrainAscending(true);
-    }, 1000);
+      setBrainAscending(true);
+    }, 1200);
   };
 
   
@@ -148,7 +148,7 @@ const [brainAscending, setBrainAscending] = useState(false);
                   if (e.animationName === 'brain-move-up') {
                     setBrainAscending(false);
                     setBrainMoving(true);
-                  } else if (e.animationName === 'brain-up-down' && brainMoving) {
+                  } else if (e.animationName === 'brain-fall' && brainMoving) {
                     setBrainHidden(true);
                     setBrainMoving(false);
                   }
