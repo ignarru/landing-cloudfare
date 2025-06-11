@@ -69,6 +69,12 @@ When deploying, ensure required environment variables—such as `SUPABASE_URL` a
 
 A personal "Acerca de mí" section appears before the services listing. You can edit the content in `client/src/components/About.tsx` and replace the photo at `client/public/profile.png`.
 
+## About scroll offset
+
+The navigation uses `ABOUT_EXTRA_OFFSET` in `client/src/lib/constants.ts` to
+determine how far the page scrolls when "Acerca de mí" is clicked. Adjust these
+values if the section appears misaligned on mobile or desktop.
+
 ## Contact scroll offset
 
 The scroll offset used when navigating to the contact form is exported as `CONTACT_EXTRA_OFFSET` in `client/src/lib/constants.ts` and can be overridden by passing an `offset` prop to `Contact`.
