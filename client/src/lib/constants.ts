@@ -1,13 +1,13 @@
 export const HERO_DELAY_MS = 600;
 
 export const CONTACT_EXTRA_OFFSET = {
-  mobile: -60,
+  mobile: -70,
   desktop: 20
 };
 
 export const ABOUT_EXTRA_OFFSET = {
-  mobile: -100,
-  desktop: 80
+  mobile: -120,
+  desktop: 40
 };
 
 export const CONSULTA_EXTRA_OFFSET = {
@@ -16,6 +16,6 @@ export const CONSULTA_EXTRA_OFFSET = {
 };
 
 export const SERVICES_EXTRA_OFFSET = {
-  mobile: -30,
+  mobile: -50,
   desktop: 110
 };
