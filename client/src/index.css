@@ -236,7 +236,7 @@
   }
 
   .brain-rise {
-    animation: brain-rise 0.5s ease-out forwards;
+    animation: brain-rise 0.8s ease-out forwards;
   }
   
   .brain-fast-down {
@@ -244,7 +244,7 @@
   }
 
   .brain-up-down {
-    animation: brain-fall 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: brain-fall 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
   
   .animate-realign {
