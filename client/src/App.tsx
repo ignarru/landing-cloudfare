@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import WhatsappButton from "@/components/WhatsappButton";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 
@@ -22,6 +23,7 @@ function App() {
         <div className="min-h-screen bg-background text-foreground">
           <Toaster />
           <Router />
+          <WhatsappButton />
         </div>
       </TooltipProvider>
     </QueryClientProvider>
