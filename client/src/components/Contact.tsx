@@ -160,7 +160,7 @@ export default function Contact({
       <section
         id="contacto"
         ref={formRef}
-        className={`py-16 sm:py-20 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 ${
+        className={`pt-16 pb-40 sm:pt-20 sm:pb-40 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
