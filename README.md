@@ -96,6 +96,12 @@ const customOffset = { ...CONTACT_EXTRA_OFFSET, desktop: -260 };
 <Contact offset={customOffset} />;
 ```
 
+## Servicios scroll offset
+
+If clicking the **Servicios** link does not align the section properly,
+adjust `SERVICES_EXTRA_OFFSET` in `client/src/lib/constants.ts`. The values
+define the mobile and desktop offsets used when scrolling to the section.
+
 ## License
 
 This project is distributed under the [MIT license](LICENSE). The same license is
