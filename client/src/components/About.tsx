@@ -1,45 +1,17 @@
-import { useState, useEffect, useRef } from "react";
 import { Rocket, Eye } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useInView } from "@/hooks/use-in-view";
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-  const isMobile = useIsMobile();
   const { ref: imageRef, isInView: imageInView } = useInView<HTMLImageElement>({ threshold: 0.2 });
   const { ref: textRef, isInView: textInView } = useInView<HTMLDivElement>({ threshold: 0.2 });
   
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
       id="acerca"
-      ref={sectionRef}
       className="py-16 sm:py-20 scroll-mt-36 md:scroll-mt-28"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          className={`grid gap-8 md:grid-cols-2 md:gap-12 items-center transition-all duration-700 ${
-            isMobile ? "" : isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        <div className="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
           <img
             ref={imageRef}
             src="/profile.png"
@@ -47,14 +19,12 @@ export default function About() {
             loading="lazy"
             decoding="async"
             className={`w-full h-auto sm:w-2/3 md:w-full max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto rounded-2xl shadow-lg object-cover transition-all duration-700 ${
-              isMobile ? (imageInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10") : ""
+              imageInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           />
           <div
             ref={textRef}
-            className={`text-center md:text-left transition-all duration-700 ${
-              isMobile ? (textInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10") : ""
-            }`}
+            className={`text-center md:text-left transition-all duration-700 ${textInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Acerca de <span className="gradient-text">Mí</span>
