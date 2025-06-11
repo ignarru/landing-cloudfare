@@ -69,7 +69,7 @@ const [brainAscending, setBrainAscending] = useState(false);
   const handleStartClick = () => {
     if (started) return;
     setStarted(true);
-    setTimeout(() => setButtonHidden(true), 300);
+    setTimeout(() => setButtonHidden(true), 600);
     setStarsExpanded(true);
     setTimeout(() => setStarsExpanded(false), 800);
     setBrainActive(true);
