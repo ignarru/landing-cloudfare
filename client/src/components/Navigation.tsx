@@ -107,16 +107,9 @@ export default function Navigation() {
               Proceso
             </button>
             <Button
-              onClick={() =>
-                scrollToSection(
-                  "contacto",
-                  isMobile
-                    ? CONTACT_EXTRA_OFFSET.mobile
-                    : CONTACT_EXTRA_OFFSET.desktop
-                )
-              }
+              onClick={() => scrollToSection("transformar", 50)}
               type="button"
-              aria-label="Ir al formulario de contacto"
+              aria-label="Ir a la sección para transformar"
               className="fluid-button text-white font-medium px-6 py-2 rounded-full"
             >
               <span>Consulta Gratis</span>
@@ -179,16 +172,9 @@ export default function Navigation() {
                 Proceso
               </button>
               <Button
-                onClick={() =>
-                  scrollToSection(
-                    "contacto",
-                    isMobile
-                      ? CONTACT_EXTRA_OFFSET.mobile
-                      : CONTACT_EXTRA_OFFSET.desktop
-                  )
-                }
+                onClick={() => scrollToSection("transformar", 50)}
                 type="button"
-                aria-label="Ir al formulario de contacto"
+                aria-label="Ir a la sección para transformar"
                 className="fluid-button text-white font-medium w-full"
               >
                 <span>Consulta Gratis</span>
