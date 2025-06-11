@@ -231,10 +231,6 @@
     animation: brain-drop-out 2.2s ease-in-out forwards;
   }
 
-  .brain-move-up {
-    animation: brain-move-up 1.1s cubic-bezier(0.42, 0, 0.58, 1) forwards;
-  }
-
   .brain-rise {
     animation: brain-rise 0.8s ease-out forwards;
   }
@@ -350,15 +346,6 @@
   100% {
     transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 120vh)) rotate(-20deg) scale(0.6);
     opacity: 1;
-  }
-}
-
-@keyframes brain-move-up {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-20px);
   }
 }
 
