@@ -24,6 +24,10 @@ export default function Navigation() {
   const consultaOffset = isMobile
     ? CONSULTA_EXTRA_OFFSET.mobile
     : CONSULTA_EXTRA_OFFSET.desktop;
+  // Offset for the "Servicios" anchor using the configured constants
+  const servicesOffset = isMobile
+    ? SERVICES_EXTRA_OFFSET.mobile
+    : SERVICES_EXTRA_OFFSET.desktop;
   const navRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
