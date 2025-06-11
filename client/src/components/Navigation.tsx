@@ -3,7 +3,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Brain, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { HERO_DELAY_MS, ABOUT_EXTRA_OFFSET } from "@/lib/constants";
+import {
+  HERO_DELAY_MS,
+  ABOUT_EXTRA_OFFSET,
+  CONSULTA_EXTRA_OFFSET
+} from "@/lib/constants";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,7 +20,9 @@ export default function Navigation() {
     : ABOUT_EXTRA_OFFSET.desktop;
   // Offset the "Consulta Gratis" anchor slightly higher on mobile and
   // reduce the desktop offset so the section appears a bit lower
-  const consultaOffset = isMobile ? -30 : -50;
+  const consultaOffset = isMobile
+    ? CONSULTA_EXTRA_OFFSET.mobile
+    : CONSULTA_EXTRA_OFFSET.desktop;
   const navRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
