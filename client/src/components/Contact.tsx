@@ -161,17 +161,17 @@ export default function Contact({
       <section
         id="contacto"
         ref={formRef}
-        className={`pt-16 pb-20 sm:pt-20 sm:pb-28 md:pb-40 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 ${
+        className={`pt-12 pb-16 sm:pt-20 sm:pb-28 md:pb-40 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className={`text-center mb-12 transition-all duration-700 ${
+        <div className={`text-center mb-8 sm:mb-12 transition-all duration-700 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Conecta con <span className="gradient-text">Nuestro Equipo</span>
           </h2>
-          <p className="text-xl text-iabyia-light max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-iabyia-light max-w-3xl mx-auto">
             Cuéntanos sobre tu proyecto y descubre cómo podemos ayudarte a implementar IA en tu negocio
           </p>
         </div>
@@ -179,7 +179,7 @@ export default function Contact({
         <div className="max-w-2xl mx-auto">
           <form
             onSubmit={handleSubmit}
-            className={`space-y-4 transition-all duration-700 delay-300 ${
+            className={`space-y-3 sm:space-y-4 transition-all duration-700 delay-300 ${
               formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
@@ -193,7 +193,7 @@ export default function Contact({
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10"
                   />
                 </label>
                 <label className="flex flex-col">
@@ -205,7 +205,7 @@ export default function Contact({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10"
                   />
                 </label>
               </div>
@@ -217,7 +217,7 @@ export default function Contact({
                   placeholder="Empresa"
                   value={formData.company}
                   onChange={handleChange}
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10"
                 />
                 </label>
               <label className="flex flex-col">
@@ -225,17 +225,17 @@ export default function Contact({
                 <Textarea
                   name="message"
                   placeholder="Cuéntanos sobre tu proyecto"
-                  rows={6}
+                  rows={5}
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none min-h-[80px]"
                   />
                 </label>
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-accent hover:opacity-90 text-white py-4 text-lg font-medium transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-accent hover:opacity-90 text-white py-3 sm:py-4 text-base sm:text-lg font-medium transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
               </Button>
