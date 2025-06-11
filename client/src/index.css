@@ -199,7 +199,7 @@
 
 @layer utilities {
   .animate-float {
-    animation: float 3s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite both;
   }
   
   .animate-pulse-soft {
@@ -369,7 +369,7 @@
 
 @keyframes brain-up-down {
   0% {
-    transform: translateY(0);
+    transform: translateY(-10px);
   }
   55% {
     transform: translateY(-30px);
