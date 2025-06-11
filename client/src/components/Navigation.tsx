@@ -12,7 +12,9 @@ export default function Navigation() {
   const isMobile = useIsMobile();
   // Push the "Acerca de mí" section further down on mobile so the
   // navigation bar doesn't overlap the profile photo when scrolling.
-  const aboutOffset = isMobile ? 220 : 100;
+  // Slightly increase the offset so the "Acerca de mí" section
+  // appears a bit lower when accessed from the navigation bar.
+  const aboutOffset = isMobile ? 240 : 120;
   // Offset the "Consulta Gratis" anchor slightly higher on mobile and
   // reduce the desktop offset so the section appears a bit lower
   const consultaOffset = isMobile ? -30 : -50;
