@@ -4,3 +4,8 @@ export const CONTACT_EXTRA_OFFSET = {
   mobile: -50,
   desktop: 20
 };
+
+export const ABOUT_EXTRA_OFFSET = {
+  mobile: -30,
+  desktop: 100
+};
