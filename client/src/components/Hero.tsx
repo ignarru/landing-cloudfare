@@ -47,7 +47,7 @@ const [brainAscending, setBrainAscending] = useState(false);
 
   useEffect(() => {
     if (showQuestion) {
-      const timer = setTimeout(() => setShowArrow(true), 400);
+      const timer = setTimeout(() => setShowArrow(true), 200);
       return () => clearTimeout(timer);
     }
   }, [showQuestion]);
