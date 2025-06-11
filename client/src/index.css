@@ -354,13 +354,13 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-30px);
+    transform: translateY(-25px);
   }
 }
 
 @keyframes brain-fast-down {
   from {
-    transform: translateY(-30px);
+    transform: translateY(-25px);
   }
   to {
     transform: translateY(120vh);
@@ -369,7 +369,7 @@
 
 @keyframes brain-up-down {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(-25px);
   }
   55% {
     transform: translateY(-30px);
