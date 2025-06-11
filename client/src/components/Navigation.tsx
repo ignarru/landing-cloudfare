@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Brain, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { HERO_DELAY_MS, CONTACT_EXTRA_OFFSET } from "@/lib/constants";
+import { HERO_DELAY_MS } from "@/lib/constants";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,6 +13,8 @@ export default function Navigation() {
   // Push the "Acerca de mí" section further down on mobile so the
   // navigation bar doesn't overlap the profile photo when scrolling.
   const aboutOffset = isMobile ? 220 : 100;
+  // Offset the "Consulta Gratis" anchor slightly higher
+  const consultaOffset = isMobile ? -30 : -70;
   const navRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
@@ -111,7 +113,7 @@ export default function Navigation() {
               Proceso
             </button>
             <Button
-              onClick={() => scrollToSection("transformar")}
+              onClick={() => scrollToSection("transformar", consultaOffset)}
               type="button"
               aria-label="Ir a la sección para transformar"
               className="fluid-button text-white font-medium px-6 py-2 rounded-full"
@@ -178,7 +180,7 @@ export default function Navigation() {
                 Proceso
               </button>
               <Button
-                onClick={() => scrollToSection("transformar")}
+                onClick={() => scrollToSection("transformar", consultaOffset)}
                 type="button"
                 aria-label="Ir a la sección para transformar"
                 className="fluid-button text-white font-medium w-full"
