@@ -490,6 +490,34 @@
   border-radius: 4px;
 }
 
+@keyframes scrollbarThumbAppear {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: hsl(var(--iabyia-accent));
+  }
+}
+
+@keyframes scrollbarTrackAppear {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: hsl(var(--iabyia-primary));
+  }
+}
+
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar-thumb {
+    animation: scrollbarThumbAppear 0.5s ease-out forwards;
+  }
+
+  ::-webkit-scrollbar-track {
+    animation: scrollbarTrackAppear 0.5s ease-out forwards;
+  }
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--iabyia-highlight));
 }
