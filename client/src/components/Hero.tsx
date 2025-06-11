@@ -130,7 +130,7 @@ const [brainAscending, setBrainAscending] = useState(false);
         </motion.div>
         
         <div
-          className={`relative mt-8 md:mt-2 lg:mt-0 xl:-mt-2 h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[28rem] flex flex-col items-center justify-center transform translate-y-0 sm:-translate-y-20 md:-translate-y-24 lg:-translate-y-28 xl:-translate-y-32 2xl:-translate-y-36 ${
+          className={`relative mt-4 md:mt-2 lg:mt-0 xl:-mt-2 h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[28rem] flex flex-col items-center justify-center transform -translate-y-8 sm:-translate-y-20 md:-translate-y-24 lg:-translate-y-28 xl:-translate-y-32 2xl:-translate-y-36 ${
             started ? "pointer-events-auto" : "pointer-events-none"
           }`}
         >
