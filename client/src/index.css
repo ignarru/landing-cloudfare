@@ -223,29 +223,29 @@
   }
 
   .animate-brain-spin {
-    animation: brain-spin 1.4s ease-in-out forwards;
+    animation: brain-spin 1.1s ease-in-out forwards;
     transform-style: preserve-3d;
   }
 
   .brain-drop-out {
-    animation: brain-drop-out 2.6s ease-in-out forwards;
+    animation: brain-drop-out 2.2s ease-in-out forwards;
   }
 
   .brain-move-up {
-    animation: brain-move-up 1.4s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+    animation: brain-move-up 1.1s cubic-bezier(0.42, 0, 0.58, 1) forwards;
   }
 
   .brain-rise {
-    /* Use a smoother cubic-bezier curve for a more fluid ascent */
-    animation: brain-rise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    /* Smooth lift */
+    animation: brain-rise 1.2s ease-in-out forwards;
   }
   
   .brain-fast-down {
-    animation: brain-fast-down 1s ease-in-out forwards;
+    animation: brain-fast-down 0.9s ease-in-out forwards;
   }
 
   .brain-up-down {
-    animation: brain-fall 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: brain-fall 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
   
   .animate-realign {
@@ -364,14 +364,11 @@
 }
 
 @keyframes brain-rise {
-  0% {
+  from {
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(-20px);
+  to {
+    transform: translateY(-40vh);
   }
 }
 
