@@ -83,6 +83,13 @@ The scroll offset used when navigating to the contact form is exported as `CONTA
 import Contact from "./Contact";
 import { CONTACT_EXTRA_OFFSET } from "@/lib/constants";
 
+## Consulta Gratis offset
+
+If the navigation link to the **Consulta Gratis** section does not align
+correctly, adjust `CONSULTA_EXTRA_OFFSET` in
+`client/src/lib/constants.ts`. The values control the mobile and desktop
+offsets used when scrolling to the section.
+
 // Increase desktop offset
 const customOffset = { ...CONTACT_EXTRA_OFFSET, desktop: -260 };
 
