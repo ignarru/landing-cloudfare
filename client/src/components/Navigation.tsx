@@ -11,9 +11,10 @@ export default function Navigation() {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const isMobile = useIsMobile();
   // Calculate a responsive offset so the "Acerca de mí" section
-  // shows the full image and initial text across screen sizes.
+  // shows the full image and initial text across screen sizes. Increase
+  // the desktop offset slightly so the section starts a bit lower.
   const calculateAboutOffset = () => {
-    if (!isMobile) return 100;
+    if (!isMobile) return 120;
     const h = window.innerHeight;
     if (h < 640) return 360;
     if (h < 768) return 320;
