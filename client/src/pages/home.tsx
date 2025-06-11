@@ -16,7 +16,7 @@ export default function Home() {
 
   // Scroll further down when jumping to the contact form
   const contactOffset = {
-    mobile: CONTACT_EXTRA_OFFSET.mobile - 80,
+    mobile: CONTACT_EXTRA_OFFSET.mobile,
     desktop: CONTACT_EXTRA_OFFSET.desktop - 80
   };
   return (
