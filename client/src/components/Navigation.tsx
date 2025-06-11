@@ -3,23 +3,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Brain, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { HERO_DELAY_MS } from "@/lib/constants";
+import { HERO_DELAY_MS, ABOUT_EXTRA_OFFSET } from "@/lib/constants";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(false);
   const isMobile = useIsMobile();
-  // Calculate a responsive offset so the "Acerca de mí" section
-  // shows the full image and initial text across screen sizes. Increase
-  // the desktop offset slightly so the section starts a bit lower.
-  const calculateAboutOffset = () => {
-    if (!isMobile) return 120;
-    const h = window.innerHeight;
-    if (h < 640) return 360;
-    if (h < 768) return 320;
-    return 260;
-  };
+  // Offset for the "Acerca de mí" anchor to avoid overscrolling on mobile
+  const aboutOffset = isMobile
+    ? ABOUT_EXTRA_OFFSET.mobile
+    : ABOUT_EXTRA_OFFSET.desktop;
   // Offset the "Consulta Gratis" anchor slightly higher on mobile and
   // reduce the desktop offset so the section appears a bit lower
   const consultaOffset = isMobile ? -30 : -50;
@@ -101,7 +95,7 @@ export default function Navigation() {
               Inicio
             </button>
             <button
-              onClick={() => scrollToSection("acerca", calculateAboutOffset())}
+              onClick={() => scrollToSection("acerca", aboutOffset)}
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Acerca de mí
@@ -168,7 +162,7 @@ export default function Navigation() {
                   Inicio
                 </button>
               <button
-                onClick={() => scrollToSection("acerca", calculateAboutOffset())}
+                onClick={() => scrollToSection("acerca", aboutOffset)}
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
                 Acerca de mí
