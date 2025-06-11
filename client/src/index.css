@@ -236,8 +236,8 @@
   }
 
   .brain-rise {
-    /* Slightly longer duration for a smoother ascent */
-    animation: brain-rise 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    /* Smooth upward motion without overshooting the text */
+    animation: brain-rise 1.4s ease-out forwards;
   }
   
   .brain-fast-down {
@@ -367,17 +367,14 @@
   0% {
     transform: translateY(0);
   }
-  25% {
-    transform: translateY(-4vh);
+  40% {
+    transform: translateY(-2vh);
   }
-  50% {
-    transform: translateY(-8vh);
-  }
-  75% {
-    transform: translateY(-12vh);
+  70% {
+    transform: translateY(-5vh);
   }
   100% {
-    transform: translateY(-15vh);
+    transform: translateY(-8vh);
   }
 }
 
