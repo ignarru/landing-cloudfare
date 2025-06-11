@@ -236,7 +236,8 @@
   }
 
   .brain-rise {
-    animation: brain-rise 0.8s ease-out forwards;
+    /* Use a smoother cubic-bezier curve for a more fluid ascent */
+    animation: brain-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
   
   .brain-fast-down {
@@ -363,10 +364,13 @@
 }
 
 @keyframes brain-rise {
-  from {
+  0% {
     transform: translateY(0);
   }
-  to {
+  60% {
+    transform: translateY(-15px);
+  }
+  100% {
     transform: translateY(-20px);
   }
 }
