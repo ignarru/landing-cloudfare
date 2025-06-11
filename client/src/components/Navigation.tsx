@@ -109,7 +109,7 @@ export default function Navigation() {
             </button>
             <button
               onClick={() =>
-                scrollToSection("servicios", isMobile ? 0 : 150)
+                scrollToSection("servicios", isMobile ? 0 : 110)
               }
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
@@ -176,7 +176,7 @@ export default function Navigation() {
               </button>
               <button
                 onClick={() =>
-                  scrollToSection("servicios", isMobile ? 0 : 150)
+                  scrollToSection("servicios", isMobile ? 0 : 110)
                 }
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
