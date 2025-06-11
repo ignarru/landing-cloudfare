@@ -371,16 +371,10 @@
   0% {
     transform: translateY(-25px);
   }
-  15% {
-    transform: translateY(-28px);
+  10% {
+    transform: translateY(-30px);
   }
   30% {
-    transform: translateY(-32px);
-  }
-  40% {
-    transform: translateY(-35px);
-  }
-  65% {
     transform: translateY(0);
   }
   100% {
