@@ -40,7 +40,7 @@ const [brainAscending, setBrainAscending] = useState(false);
 
   useEffect(() => {
     if (brainHidden) {
-      const timer = setTimeout(() => setShowQuestion(true), 200);
+      const timer = setTimeout(() => setShowQuestion(true), 100);
       return () => clearTimeout(timer);
     }
   }, [brainHidden]);
