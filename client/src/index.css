@@ -368,16 +368,16 @@
     transform: translateY(0);
   }
   25% {
-    transform: translateY(-10vh);
+    transform: translateY(-8vh);
   }
   50% {
-    transform: translateY(-20vh);
+    transform: translateY(-16vh);
   }
   75% {
-    transform: translateY(-30vh);
+    transform: translateY(-24vh);
   }
   100% {
-    transform: translateY(-40vh);
+    transform: translateY(-30vh);
   }
 }
 
