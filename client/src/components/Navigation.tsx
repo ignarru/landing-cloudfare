@@ -13,7 +13,6 @@ export default function Navigation() {
   // Push the "Acerca de mí" section further down on mobile so the
   // navigation bar doesn't overlap the profile photo when scrolling.
   const aboutOffset = isMobile ? 220 : 100;
-  const aboutOffset = isMobile ? 160 : 100;
   const navRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
