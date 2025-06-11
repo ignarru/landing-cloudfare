@@ -199,7 +199,7 @@
 
 @layer utilities {
   .animate-float {
-    animation: float 3s ease-in-out infinite both;
+    animation: float 3s ease-in-out infinite;
   }
   
   .animate-pulse-soft {
@@ -354,13 +354,13 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-70px);
+    transform: translateY(-50px);
   }
 }
 
 @keyframes brain-fast-down {
   from {
-    transform: translateY(-70px);
+    transform: translateY(-50px);
   }
   to {
     transform: translateY(120vh);
@@ -369,7 +369,7 @@
 
 @keyframes brain-fall {
   0% {
-    transform: translateY(-70px);
+    transform: translateY(-50px);
     opacity: 1;
   }
   70% {
