@@ -113,7 +113,6 @@ export default function Navigation() {
             </button>
             <button
               onClick={() => scrollToSection("servicios", servicesOffset)}
-              }
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Servicios
