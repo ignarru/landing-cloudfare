@@ -367,16 +367,14 @@
   0% {
     transform: translateY(0);
   }
-  /* subtle start */
-  20% {
-    transform: translateY(-5px);
+  25% {
+    transform: translateY(-10vh);
   }
-  /* gradual lift */
-  40% {
-    transform: translateY(-10px);
+  50% {
+    transform: translateY(-20vh);
   }
-  60% {
-    transform: translateY(-15px);
+  75% {
+    transform: translateY(-30vh);
   }
   100% {
     transform: translateY(-40vh);
