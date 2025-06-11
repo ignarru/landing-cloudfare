@@ -10,6 +10,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(false);
   const isMobile = useIsMobile();
+  const aboutOffset = isMobile ? 160 : 100;
   const navRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
@@ -89,7 +90,7 @@ export default function Navigation() {
               Inicio
             </button>
             <button
-              onClick={() => scrollToSection("acerca", 100)}
+              onClick={() => scrollToSection("acerca", aboutOffset)}
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Acerca de mí
@@ -154,7 +155,7 @@ export default function Navigation() {
                   Inicio
                 </button>
               <button
-                onClick={() => scrollToSection("acerca", 100)}
+                onClick={() => scrollToSection("acerca", aboutOffset)}
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
                 Acerca de mí
