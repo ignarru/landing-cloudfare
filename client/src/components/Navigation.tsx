@@ -51,8 +51,7 @@ export default function Navigation() {
       // are positioned more naturally below the navigation bar.
       const extraOffset = isMobile ? 0 : -40;
       const elementPosition =
-        element.getBoundingClientRect().top +
-        window.pageYOffset -
+        element.offsetTop -
         navHeight +
         offset +
         extraOffset;
