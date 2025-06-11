@@ -142,10 +142,10 @@ const [brainAscending, setBrainAscending] = useState(false);
             >
               <div
                 className={`relative w-fit ${started ? '' : 'animate-float'} ${
-                  brainAscending ? 'brain-move-up' : ''
+                  brainAscending ? 'brain-rise' : ''
                 } ${brainMoving ? 'brain-up-down' : ''}`}
                 onAnimationEnd={(e) => {
-                  if (e.animationName === 'brain-move-up') {
+                  if (e.animationName === 'brain-rise') {
                     setBrainAscending(false);
                     setBrainMoving(true);
                   } else if (e.animationName === 'brain-fall' && brainMoving) {
