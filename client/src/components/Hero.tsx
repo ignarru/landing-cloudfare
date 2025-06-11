@@ -95,7 +95,7 @@ const [brainAscending, setBrainAscending] = useState(false);
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-            <h1 className="text-center text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-center text-[3rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Transforma tu negocio con
             <br />
             <span className="gradient-text">Inteligencia Artificial</span>
