@@ -235,6 +235,10 @@
     animation: brain-move-up 1.2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
   }
 
+  .brain-rise {
+    animation: brain-rise 1s ease-out forwards;
+  }
+  
   .brain-fast-down {
     animation: brain-fast-down 0.8s ease-in forwards;
   }
@@ -350,6 +354,15 @@
 }
 
 @keyframes brain-move-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes brain-rise {
   from {
     transform: translateY(0);
   }
