@@ -36,7 +36,7 @@ export default function About() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-700 ${
+          className={`grid gap-8 md:grid-cols-2 md:gap-12 items-center transition-all duration-700 ${
             isMobile ? "" : isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -46,7 +46,7 @@ export default function About() {
             alt="Foto de Ignacio Arruvito"
             loading="lazy"
             decoding="async"
-            className={`w-2/3 md:w-3/4 mx-auto rounded-2xl shadow-lg transition-all duration-700 ${
+            className={`w-full max-w-xs sm:w-2/3 md:w-3/4 mx-auto rounded-2xl shadow-lg transition-all duration-700 ${
               isMobile ? (imageInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10") : ""
             }`}
           />
@@ -66,9 +66,9 @@ export default function About() {
               Cuento con amplia experiencia implementando proyectos de automatización y análisis predictivo para empresas de diversas industrias.
             </p>
 
-            <div className="mt-8 space-y-6">
+            <div className="mt-8 space-y-4 sm:space-y-6">
               <div className="flex items-start">
-                <div className="w-10 h-10 iabyia-accent rounded-lg flex items-center justify-center mr-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 iabyia-accent rounded-lg flex items-center justify-center mr-4">
                   <Rocket className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-iabyia-light text-sm md:text-base leading-relaxed">
@@ -76,7 +76,7 @@ export default function About() {
                 </p>
               </div>
               <div className="flex items-start">
-                <div className="w-10 h-10 iabyia-highlight rounded-lg flex items-center justify-center mr-4">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 iabyia-highlight rounded-lg flex items-center justify-center mr-4">
                   <Eye className="w-5 h-5 text-white" />
                 </div>
                 <p className="text-iabyia-light text-sm md:text-base leading-relaxed">
