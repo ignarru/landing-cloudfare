@@ -90,7 +90,6 @@ const [brainAscending, setBrainAscending] = useState(false);
     >
         <div className="max-w-7xl 2xl:max-w-none mx-auto text-center w-full">
         <motion.div
-          layout
           className={`relative z-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
@@ -108,7 +107,6 @@ const [brainAscending, setBrainAscending] = useState(false);
             {!buttonHidden && (
               <motion.div
                 key="start-button"
-                layout
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
