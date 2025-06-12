@@ -21,6 +21,6 @@ export const SERVICES_EXTRA_OFFSET = {
 };
 
 export const PROCESS_EXTRA_OFFSET = {
-  mobile: 100,
+  mobile: 110,
   desktop: 100
 };
