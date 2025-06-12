@@ -176,7 +176,7 @@ export default function Contact({
           </p>
         </div>
 
-        <div className="max-w-5xl 2xl:max-w-6xl mx-auto">
+        <div className="max-w-7xl 2xl:max-w-none mx-auto">
           <form
             onSubmit={handleSubmit}
             className={`space-y-3 sm:space-y-4 lg:space-y-5 transition-all duration-700 delay-300 ${
