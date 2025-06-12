@@ -86,7 +86,7 @@ const [brainAscending, setBrainAscending] = useState(false);
   return (
     <section
       id="inicio"
-      className="box-border flex flex-col items-center justify-center min-h-[100dvh] sm:min-h-[80vh] pt-24 scroll-mt-24 px-4 sm:px-6 2xl:px-20 overflow-hidden"
+      className="box-border flex flex-col items-center justify-center min-h-[100dvh] pt-24 scroll-mt-24 px-4 sm:px-6 2xl:px-20 overflow-hidden"
     >
         <div className="max-w-7xl 2xl:max-w-none mx-auto text-center w-full">
         <motion.div
