@@ -7,10 +7,9 @@ import WorkProcess from "@/components/WorkProcess";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { CONTACT_EXTRA_OFFSET } from "@/lib/constants";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
-  const [showStats, setShowStats] = useState(false);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
@@ -23,8 +22,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <Hero onBrainHidden={() => setShowStats(true)} />
-      {showStats && <Statistics />}
+      <Hero />
+      <Statistics />
       <About />
       <Services />
       <WorkProcess />
