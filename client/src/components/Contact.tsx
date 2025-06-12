@@ -183,7 +183,7 @@ export default function Contact({
               formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
                 <label className="flex flex-col">
                   <span className="sr-only">Nombre</span>
                   <Input
@@ -193,7 +193,7 @@ export default function Contact({
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-20 lg:text-lg"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-12 lg:text-lg"
                   />
                 </label>
                 <label className="flex flex-col">
@@ -205,7 +205,7 @@ export default function Contact({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-20 lg:text-lg"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-12 lg:text-lg"
                   />
                 </label>
               </div>
@@ -217,7 +217,7 @@ export default function Contact({
                   placeholder="Empresa"
                   value={formData.company}
                   onChange={handleChange}
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-20 lg:text-lg"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-12 lg:text-lg"
                 />
                 </label>
               <label className="flex flex-col">
@@ -229,7 +229,7 @@ export default function Contact({
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[250px] lg:text-lg"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[180px] lg:text-lg"
                 />
                 </label>
               <Button
