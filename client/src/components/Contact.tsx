@@ -193,7 +193,7 @@ export default function Contact({
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-16"
                   />
                 </label>
                 <label className="flex flex-col">
@@ -205,7 +205,7 @@ export default function Contact({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-16"
                   />
                 </label>
               </div>
@@ -217,7 +217,7 @@ export default function Contact({
                   placeholder="Empresa"
                   value={formData.company}
                   onChange={handleChange}
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-16"
                 />
                 </label>
               <label className="flex flex-col">
@@ -229,7 +229,7 @@ export default function Contact({
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none min-h-[120px]"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none min-h-[160px]"
                   />
                 </label>
               <Button
