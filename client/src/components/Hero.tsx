@@ -235,7 +235,7 @@ const [brainAscending, setBrainAscending] = useState(false);
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col items-center mt-16 sm:mt-20"
+              className="flex flex-col items-center mt-12 sm:mt-16"
             >
               <p className="text-3xl sm:text-4xl text-iabyia-light font-semibold mb-2">
                 ¿Querés conocer más?
