@@ -90,7 +90,7 @@ const [brainAscending, setBrainAscending] = useState(false);
     >
         <div className="max-w-7xl 2xl:max-w-none mx-auto text-center w-full">
         <motion.div
-          className={`absolute top-24 left-0 right-0 z-10 transition-all duration-1000 ${
+          className={`absolute top-24 lg:top-32 left-0 right-0 z-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
