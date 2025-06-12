@@ -333,7 +333,7 @@
     transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 30vh)) rotate(-5deg) scale(0.9);
   }
   100% {
-    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 120vh)) rotate(-20deg) scale(0.6);
+    transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 150vh)) rotate(-20deg) scale(0.6);
     opacity: 1;
   }
 }
@@ -355,7 +355,7 @@
     transform: translateY(-25px);
   }
   to {
-    transform: translateY(120vh);
+    transform: translateY(150vh);
   }
 }
 
@@ -371,7 +371,7 @@
     transform: translateY(90vh);
   }
   100% {
-    transform: translateY(120vh);
+    transform: translateY(150vh);
     opacity: 0;
   }
 }
