@@ -136,11 +136,12 @@ const [brainAscending, setBrainAscending] = useState(false);
         >
           {!brainHidden && (
             <div
-              className={`absolute inset-0 flex justify-center items-center transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`absolute inset-0 flex justify-center items-center transition-opacity duration-1000 delay-300 ${
+                isVisible ? "opacity-100" : "opacity-0"
               } ${started ? "pointer-events-auto" : "pointer-events-none"}`}
             >
               <div className={`animate-float ${started ? 'animation-paused' : ''}`}>
+                <div className={`animate-float ${started ? 'animation-paused' : ''}`}>
                 <div
                   className={`relative w-fit ${
                     brainAscending ? 'brain-rise' : ''
