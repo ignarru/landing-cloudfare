@@ -74,10 +74,11 @@ export default function Services() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsMainVisible(true);
-        };
+          }
+        });
       },
       { threshold: 0.2 }
     );
