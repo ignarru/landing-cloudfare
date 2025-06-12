@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id="acerca"
-      className="py-16 sm:py-20 scroll-mt-36 md:scroll-mt-28"
+      className="py-16 sm:py-20 scroll-mt-36 md:scroll-mt-28 lg:min-h-screen lg:flex lg:items-center lg:py-0"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
