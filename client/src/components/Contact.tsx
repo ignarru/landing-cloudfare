@@ -193,7 +193,7 @@ export default function Contact({
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-16 lg:h-20 lg:text-lg"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-20 lg:text-lg"
                   />
                 </label>
                 <label className="flex flex-col">
@@ -205,7 +205,7 @@ export default function Contact({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-16 lg:h-20 lg:text-lg"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-20 lg:text-lg"
                   />
                 </label>
               </div>
@@ -217,7 +217,7 @@ export default function Contact({
                   placeholder="Empresa"
                   value={formData.company}
                   onChange={handleChange}
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-16 lg:h-20 lg:text-lg"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12 md:h-10 lg:h-20 lg:text-lg"
                 />
                 </label>
               <label className="flex flex-col">
@@ -229,7 +229,7 @@ export default function Contact({
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none min-h-[160px] lg:min-h-[200px] lg:text-lg"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[200px] lg:text-lg"
                   />
                 </label>
               <Button
