@@ -176,7 +176,7 @@ export default function Contact({
           </p>
         </div>
 
-        <div className="max-w-2xl 2xl:max-w-3xl mx-auto">
+        <div className="max-w-3xl 2xl:max-w-4xl mx-auto">
           <form
             onSubmit={handleSubmit}
             className={`space-y-3 sm:space-y-4 transition-all duration-700 delay-300 ${
@@ -193,7 +193,7 @@ export default function Contact({
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12"
                   />
                 </label>
                 <label className="flex flex-col">
@@ -205,7 +205,7 @@ export default function Contact({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10"
+                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12"
                   />
                 </label>
               </div>
@@ -217,7 +217,7 @@ export default function Contact({
                   placeholder="Empresa"
                   value={formData.company}
                   onChange={handleChange}
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-12"
                 />
                 </label>
               <label className="flex flex-col">
@@ -229,7 +229,7 @@ export default function Contact({
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none min-h-[80px]"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none min-h-[120px]"
                   />
                 </label>
               <Button
