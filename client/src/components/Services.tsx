@@ -77,7 +77,7 @@ export default function Services() {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             setIsMainVisible(true);
-        });
+        };
       },
       { threshold: 0.2 }
     );
