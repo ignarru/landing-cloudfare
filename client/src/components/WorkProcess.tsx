@@ -54,7 +54,7 @@ function StepItem({ step, index }: { step: ProcessStep; index: number }) {
     >
       {/* Step number circle */}
       <div
-        className={`absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 ${step.color} rounded-full flex items-center justify-center z-10 shadow-lg`}
+        className={`absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 ${step.color} rounded-full flex items-center justify-center z-10 shadow-lg`}
       >
         <div className="flex flex-col items-center">
           {step.icon}
@@ -68,7 +68,7 @@ function StepItem({ step, index }: { step: ProcessStep; index: number }) {
           index % 2 === 0 ? "md:w-5/12 md:pr-8" : "md:w-5/12 md:ml-auto md:pl-8"
         }`}
       >
-        <div className="glass-effect rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300">
+        <div className="glass-effect rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
           <h3 className="text-2xl font-semibold mb-3">{step.title}</h3>
           <p className="text-iabyia-light leading-relaxed">{step.description}</p>
         </div>
@@ -100,7 +100,7 @@ export default function WorkProcess() {
   }, []);
 
   return (
-    <section id="proceso" ref={sectionRef} className="py-16 sm:py-20 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-0">
+    <section id="proceso" ref={sectionRef} className="py-16 sm:py-20 my-16 sm:my-20 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
