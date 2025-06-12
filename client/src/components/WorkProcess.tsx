@@ -100,7 +100,7 @@ export default function WorkProcess() {
   }, []);
 
   return (
-    <section id="proceso" ref={sectionRef} className="py-16 sm:py-20 bg-secondary">
+    <section id="proceso" ref={sectionRef} className="py-16 sm:py-20 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
