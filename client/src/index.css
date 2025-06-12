@@ -254,6 +254,10 @@
   .animate-brain-bounce-once {
     animation: brain-bounce-once 0.8s forwards;
   }
+
+  .animation-paused {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes float {
