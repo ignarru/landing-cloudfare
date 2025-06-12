@@ -144,17 +144,17 @@ export default function Contact({
         }`}
       >
         <div className="max-w-7xl 2xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 2xl:px-20 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-5 text-white">
+          <h2 className="text-3xl lg:text-6xl font-bold mb-5 text-white">
             ¿Listo para Transformar tu Negocio?
           </h2>
-          <p className="text-lg lg:text-xl text-blue-100 mb-6 max-w-4xl mx-auto">
+          <p className="text-lg lg:text-2xl text-blue-100 mb-6 max-w-4xl mx-auto">
             Agenda una consulta gratuita y descubre cómo la IA puede
             revolucionar tu empresa
           </p>
           <Button
             onClick={() => scrollToContact(offset)}
             aria-label="Ir al formulario de contacto"
-            className="bg-white text-accent hover:bg-gray-100 px-6 py-3 lg:px-8 lg:py-4 text-base lg:text-lg font-semibold transform hover:scale-105 transition-all"
+            className="bg-white text-accent hover:bg-gray-100 px-6 py-3 lg:px-10 lg:py-5 text-base lg:text-xl font-semibold transform hover:scale-105 transition-all"
           >
             Agendar Consulta Gratuita
           </Button>
@@ -176,10 +176,10 @@ export default function Contact({
               : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-5">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-3 sm:mb-5">
             Conecta con <span className="gradient-text">Nuestro Equipo</span>
           </h2>
-          <p className="text-lg lg:text-xl text-iabyia-light max-w-4xl mx-auto">
+          <p className="text-lg lg:text-2xl text-iabyia-light max-w-4xl mx-auto">
             Cuéntanos sobre tu proyecto y descubre cómo podemos ayudarte a
             implementar IA en tu negocio
           </p>
@@ -188,7 +188,7 @@ export default function Contact({
         <div className="max-w-5xl mx-auto">
           <form
             onSubmit={handleSubmit}
-            className={`space-y-2 sm:space-y-3 lg:space-y-4 transition-all duration-700 delay-300 ${
+            className={`space-y-2 sm:space-y-3 lg:space-y-6 transition-all duration-700 delay-300 ${
               formVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -204,7 +204,7 @@ export default function Contact({
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
                 />
               </label>
               <label className="flex flex-col">
@@ -216,7 +216,7 @@ export default function Contact({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
                 />
                 </label>
             </div>
@@ -228,7 +228,7 @@ export default function Contact({
                 placeholder="Empresa"
                 value={formData.company}
                 onChange={handleChange}
-                className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
+                className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
               />
             </label>
             <label className="flex flex-col">
@@ -240,13 +240,13 @@ export default function Contact({
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[160px] lg:text-lg"
+                className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[180px] lg:text-xl"
               />
             </label>
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-accent hover:opacity-90 text-white py-2 sm:py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-medium transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-accent hover:opacity-90 text-white py-2 sm:py-3 lg:py-5 text-sm sm:text-base lg:text-xl font-medium transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
             </Button>
