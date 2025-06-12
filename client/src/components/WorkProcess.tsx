@@ -69,8 +69,8 @@ function StepItem({ step, index }: { step: ProcessStep; index: number }) {
         }`}
       >
         <div className="glass-effect rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
-          <h3 className="text-2xl font-semibold mb-3">{step.title}</h3>
-          <p className="text-iabyia-light leading-relaxed">{step.description}</p>
+          <h3 className="text-3xl font-semibold mb-4">{step.title}</h3>
+          <p className="text-lg text-iabyia-light leading-relaxed">{step.description}</p>
         </div>
       </div>
     </div>
