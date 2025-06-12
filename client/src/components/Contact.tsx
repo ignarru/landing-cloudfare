@@ -185,7 +185,7 @@ export default function Contact({
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <form
             onSubmit={handleSubmit}
             className={`space-y-2 sm:space-y-3 lg:space-y-4 transition-all duration-700 delay-300 ${
@@ -194,7 +194,7 @@ export default function Contact({
                 : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3">
+              <div className="grid md:grid-cols-2 gap-2 sm:gap-3">
               <label className="flex flex-col">
                 <span className="sr-only">Nombre</span>
                 <Input
