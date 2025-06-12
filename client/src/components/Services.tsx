@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useInView } from "@/hooks/use-in-view";
 import {
@@ -8,7 +8,7 @@ import {
   Brain
 } from "lucide-react";
 
-const SpecializedServices = lazy(() => import("./SpecializedServices"));
+import SpecializedServices from "./SpecializedServices";
 
 interface Service {
   icon: React.ReactNode;
