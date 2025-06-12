@@ -67,9 +67,7 @@ function ServiceCard({ service, visible }: { service: Service; visible: boolean 
 
 export default function Services() {
   const [isMainVisible, setIsMainVisible] = useState(false);
-  const [loadSpecialized, setLoadSpecialized] = useState(false);
   const mainSectionRef = useRef<HTMLElement>(null);
-  const { ref: sentinelRef, isInView: sentinelVisible } = useInView<HTMLDivElement>({ threshold: 0.1 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,10 +85,6 @@ export default function Services() {
 
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (sentinelVisible) setLoadSpecialized(true);
-  }, [sentinelVisible]);
 
   return (
     <>
@@ -120,13 +114,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Lazy Specialized Services Section */}
-      <div ref={sentinelRef}></div>
-      {loadSpecialized && (
-        <Suspense fallback={null}>
-          <SpecializedServices />
-        </Suspense>
-      )}
+      {/* Specialized Services Section */}
+      <SpecializedServices />
     </>
   );
 }
