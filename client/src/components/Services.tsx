@@ -23,21 +23,21 @@ interface Service {
 
 const mainServices: Service[] = [
   {
-    icon: <Bot className="w-8 h-8 text-white" />,
+    icon: <Bot className="w-6 h-6 sm:w-8 sm:h-8 text-white" />,
     title: "Automatización Inteligente",
     description: "Optimizamos tus procesos empresariales con sistemas de automatización avanzados que reducen costos y mejoran la productividad.",
     color: "iabyia-accent",
     delay: 0
   },
   {
-    icon: <TrendingUp className="w-8 h-8 text-white" />,
+    icon: <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-white" />,
     title: "Análisis Predictivo",
     description: "Utilizamos machine learning para predecir tendencias, comportamientos y oportunidades de mercado que impulsen tu crecimiento.",
     color: "bg-green-500",
     delay: 200
   },
   {
-    icon: <MessageCircle className="w-8 h-8 text-white" />,
+    icon: <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />,
     title: "Chatbots Avanzados",
     description: "Mejora la atención al cliente con chatbots inteligentes que ofrecen respuestas personalizadas 24/7.",
     color: "bg-blue-500",
@@ -76,15 +76,17 @@ function ServiceCard({ service, visible }: { service: Service; visible: boolean 
   return (
     <div
       ref={ref}
-      className={`glass-effect rounded-2xl p-8 hover:transform hover:scale-105 transition-all duration-300 ${
+      className={`glass-effect rounded-2xl p-4 sm:p-8 hover:transform hover:scale-105 transition-all duration-300 ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{ transitionDelay: `${service.delay}ms` }}
     >
-      <div className={`w-16 h-16 ${service.color} rounded-xl flex items-center justify-center mb-6`}>
+      <div
+        className={`w-12 h-12 sm:w-16 sm:h-16 ${service.color} rounded-xl flex items-center justify-center mb-4 sm:mb-6`}
+      >
         {service.icon}
       </div>
-      <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+      <h3 className="text-xl sm:text-2xl font-bold mb-4">{service.title}</h3>
       <p className="text-iabyia-light leading-relaxed">{service.description}</p>
     </div>
   );
