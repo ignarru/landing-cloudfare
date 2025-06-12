@@ -103,7 +103,7 @@ export default function WorkProcess() {
     <section
       id="nuestro-proceso"
       ref={sectionRef}
-      className="py-20 sm:py-24 mt-16 sm:mt-20 mb-0 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-24"
+      className="py-28 sm:py-32 mt-16 sm:mt-20 mb-0 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-32"
     >
       <div className="max-w-7xl 2xl:max-w-none mx-auto px-6 sm:px-8 lg:px-12 2xl:px-24">
         <div className={`text-center mb-16 transition-all duration-700 ${
