@@ -18,7 +18,7 @@ export default function About() {
             alt="Foto de Ignacio Arruvito"
             loading="lazy"
             decoding="async"
-            className={`w-full h-auto sm:w-2/3 md:w-full max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto rounded-2xl shadow-lg object-cover transition-all duration-700 border border-gray-700 ${
+            className={`w-full h-auto sm:w-2/3 md:w-full max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto rounded-2xl shadow-2xl shadow-black/80 object-cover transition-all duration-700 border border-gray-700/40 ${
               imageInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           />
