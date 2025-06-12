@@ -161,7 +161,7 @@ export default function Contact({
       <section
         id="contacto"
         ref={formRef}
-        className={`pt-12 pb-16 sm:pt-20 sm:pb-28 md:pb-40 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 lg:min-h-screen lg:flex lg:items-center lg:pt-0 lg:pb-0 ${
+        className={`pt-12 pb-16 sm:pt-20 sm:pb-28 md:pb-40 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 lg:min-h-screen lg:flex lg:flex-col lg:items-center lg:pt-0 lg:pb-0 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
