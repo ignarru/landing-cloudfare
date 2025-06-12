@@ -86,21 +86,21 @@ const [brainAscending, setBrainAscending] = useState(false);
   return (
     <section
       id="inicio"
-      className="box-border flex flex-col items-center justify-center min-h-[100dvh] sm:min-h-[80vh] pt-24 scroll-mt-24 px-4 sm:px-6 overflow-hidden"
+      className="box-border flex flex-col items-center justify-center min-h-[100dvh] sm:min-h-[80vh] pt-24 scroll-mt-24 px-4 sm:px-6 2xl:px-20 overflow-hidden"
     >
-        <div className="max-w-7xl mx-auto text-center w-full">
+        <div className="max-w-7xl 2xl:max-w-none mx-auto text-center w-full">
         <motion.div
           layout
           className={`relative z-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-            <h1 className="text-center text-[2.6rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-center text-[2.6rem] sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold mb-6 leading-tight">
             Transforma tu negocio con
             <br />
             <span className="gradient-text">Inteligencia Artificial</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl 2xl:text-2xl text-iabyia-light mb-8 max-w-4xl mx-auto leading-relaxed">
             Automatización inteligente, análisis predictivo y optimización de procesos
             para llevar tu empresa al siguiente nivel
           </p>
