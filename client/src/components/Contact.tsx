@@ -165,7 +165,7 @@ export default function Contact({
       <section
         id="contacto"
         ref={formRef}
-        className={`pt-12 pb-16 sm:pt-16 sm:pb-24 md:pb-32 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 lg:min-h-screen lg:flex lg:flex-col lg:items-center lg:justify-center lg:pt-0 lg:pb-0 ${
+        className={`min-h-screen flex flex-col items-center justify-center py-10 sm:py-14 md:py-20 lg:pt-0 lg:pb-0 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
@@ -176,7 +176,7 @@ export default function Contact({
               : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-3 sm:mb-5">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 sm:mb-5">
             Conecta con <span className="gradient-text">Nuestro Equipo</span>
           </h2>
           <p className="text-lg lg:text-2xl text-iabyia-light max-w-4xl mx-auto">
