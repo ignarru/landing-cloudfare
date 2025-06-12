@@ -102,6 +102,12 @@ If clicking the **Servicios** link does not align the section properly,
 adjust `SERVICES_EXTRA_OFFSET` in `client/src/lib/constants.ts`. The values
 define the mobile and desktop offsets used when scrolling to the section.
 
+## Proceso scroll offset
+
+Similarly, the **Proceso** navigation link relies on `PROCESS_EXTRA_OFFSET` in
+`client/src/lib/constants.ts`. Tweak these values if the heading of the process
+section is hidden behind the navigation bar on mobile or desktop.
+
 ## License
 
 This project is distributed under the [MIT license](LICENSE). The same license is
