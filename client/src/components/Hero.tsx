@@ -86,11 +86,11 @@ const [brainAscending, setBrainAscending] = useState(false);
   return (
     <section
       id="inicio"
-      className="box-border flex flex-col items-center justify-center min-h-[100dvh] pt-24 scroll-mt-24 px-4 sm:px-6 2xl:px-20 overflow-hidden"
+      className="box-border relative flex flex-col items-center justify-center min-h-[100dvh] pt-24 scroll-mt-24 px-4 sm:px-6 2xl:px-20 overflow-hidden"
     >
         <div className="max-w-7xl 2xl:max-w-none mx-auto text-center w-full">
         <motion.div
-          className={`relative z-10 transition-all duration-1000 ${
+          className={`absolute top-0 left-0 right-0 z-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
