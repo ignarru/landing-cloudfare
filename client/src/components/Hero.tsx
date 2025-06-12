@@ -144,11 +144,12 @@ const [brainAscending, setBrainAscending] = useState(false);
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               } ${started ? "pointer-events-auto" : "pointer-events-none"}`}
             >
-              <div
-                className={`relative w-fit ${started ? '' : 'animate-float'} ${
-                  brainAscending ? 'brain-rise' : ''
-                } ${brainMoving ? 'brain-up-down' : ''}`}
-                onAnimationEnd={(e) => {
+              <div className={`animate-float ${started ? 'animation-paused' : ''}`}>
+                <div
+                  className={`relative w-fit ${
+                    brainAscending ? 'brain-rise' : ''
+                  } ${brainMoving ? 'brain-up-down' : ''}`}
+                  onAnimationEnd={(e) => {
                   if (e.animationName === 'brain-rise') {
                     setBrainAscending(false);
                     setBrainMoving(true);
@@ -228,6 +229,7 @@ const [brainAscending, setBrainAscending] = useState(false);
               />
           </div>
         </div>
+      </div>
         )}
         <AnimatePresence>
           {showQuestion && (
