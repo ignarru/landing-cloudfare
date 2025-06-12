@@ -66,8 +66,8 @@ function StepItem({ step, index }: { step: ProcessStep; index: number }) {
       <div
         className={`pt-16 pl-20 sm:pl-24 md:pt-0 md:pl-0 w-full ${
           index % 2 === 0
-            ? "md:w-6/12 lg:w-8/12 md:pr-8 lg:-translate-x-32"
-            : "md:w-6/12 lg:w-8/12 md:ml-auto md:pl-8 lg:translate-x-32"
+            ? "md:w-6/12 lg:w-8/12 md:pr-8 lg:-translate-x-48"
+            : "md:w-6/12 lg:w-8/12 md:ml-auto md:pl-8 lg:translate-x-48"
         }`}
       >
         <div className="glass-effect rounded-xl p-6 sm:p-8 hover:transform hover:scale-105 transition-all duration-300">
