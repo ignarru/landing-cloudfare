@@ -5,7 +5,11 @@ import InteractiveBrain from "./InteractiveBrain";
 import { Button } from "@/components/ui/button";
 import { HERO_DELAY_MS } from "@/lib/constants";
 
-export default function Hero() {
+interface HeroProps {
+  onBrainHidden?: () => void;
+}
+
+export default function Hero({ onBrainHidden }: HeroProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [brainActive, setBrainActive] = useState(false);
   const [burstActive, setBurstActive] = useState(false);
@@ -151,6 +155,7 @@ const [brainAscending, setBrainAscending] = useState(false);
                   } else if (e.animationName === 'brain-fall' && brainMoving) {
                     setBrainHidden(true);
                     setBrainMoving(false);
+                    onBrainHidden?.();
                   }
                 }}
               >
