@@ -12,7 +12,7 @@ export interface ContactProps {
 }
 
 export default function Contact({
-  offset = CONTACT_EXTRA_OFFSET
+  offset = CONTACT_EXTRA_OFFSET,
 }: ContactProps) {
   const [ctaVisible, setCtaVisible] = useState(false);
   const [formVisible, setFormVisible] = useState(false);
@@ -21,7 +21,7 @@ export default function Contact({
     name: "",
     email: "",
     company: "",
-    message: ""
+    message: "",
   });
   const ctaRef = useRef<HTMLElement>(null);
   const formRef = useRef<HTMLElement>(null);
@@ -54,7 +54,7 @@ export default function Contact({
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (ctaRef.current) {
@@ -72,7 +72,7 @@ export default function Contact({
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (formRef.current) {
@@ -82,25 +82,25 @@ export default function Contact({
     return () => observer.disconnect();
   }, []);
 
- const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const formSchema = insertContactSchema.extend({
-      email: z.string().email({ message: "Email inválido" }),
-    });
-    const parsed = formSchema.safeParse(formData);
-    if (!parsed.success) {
-      const message = parsed.error.errors[0]?.message || "Datos inválidos";
-      throw new Error(message);
-    }
+    try {
+      const formSchema = insertContactSchema.extend({
+        email: z.string().email({ message: "Email inválido" }),
+      });
+      const parsed = formSchema.safeParse(formData);
+      if (!parsed.success) {
+        const message = parsed.error.errors[0]?.message || "Datos inválidos";
+        throw new Error(message);
+      }
 
-    const apiUrl = new URL("/api/contact", window.location.origin).toString();
-    const res = await fetch(apiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+          const apiUrl = new URL("/api/contact", window.location.origin).toString();
+      const res = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (!res.ok) {
@@ -116,17 +116,20 @@ export default function Contact({
       setFormData({ name: "", email: "", company: "", message: "" });
       } catch (err: unknown) {
       console.error(err);
-      const message = err instanceof Error ? err.message : "No se pudo enviar el mensaje";
+      const message =
+        err instanceof Error ? err.message : "No se pudo enviar el mensaje";
       toast({ title: "Error", description: message });
     }
    
     setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -145,7 +148,8 @@ export default function Contact({
             ¿Listo para Transformar tu Negocio?
           </h2>
           <p className="text-lg lg:text-xl text-blue-100 mb-6 max-w-4xl mx-auto">
-            Agenda una consulta gratuita y descubre cómo la IA puede revolucionar tu empresa
+            Agenda una consulta gratuita y descubre cómo la IA puede
+            revolucionar tu empresa
           </p>
           <Button
             onClick={() => scrollToContact(offset)}
@@ -161,20 +165,23 @@ export default function Contact({
       <section
         id="contacto"
         ref={formRef}
-        className={`pt-8 pb-12 sm:pt-16 sm:pb-24 md:pb-32 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 lg:min-h-screen lg:flex lg:flex-col lg:items-center lg:justify-center lg:pt-0 lg:pb-0 ${
+        className={`pt-12 pb-16 sm:pt-16 sm:pb-24 md:pb-32 text-center transition-all duration-700 scroll-mt-44 md:scroll-mt-36 lg:min-h-screen lg:flex lg:flex-col lg:items-center lg:justify-center lg:pt-0 lg:pb-0 ${
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
           <div
-          className={`text-center mb-8 sm:mb-12 max-w-4xl mx-auto transition-all duration-700 ${
-            formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`text-center mb-8 sm:mb-12 transition-all duration-700 ${
+            formVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-5">
             Conecta con <span className="gradient-text">Nuestro Equipo</span>
           </h2>
           <p className="text-lg lg:text-xl text-iabyia-light max-w-4xl mx-auto">
-            Cuéntanos sobre tu proyecto y descubre cómo podemos ayudarte a implementar IA en tu negocio
+            Cuéntanos sobre tu proyecto y descubre cómo podemos ayudarte a
+            implementar IA en tu negocio
           </p>
         </div>
 
@@ -182,68 +189,70 @@ export default function Contact({
           <form
             onSubmit={handleSubmit}
             className={`space-y-2 sm:space-y-3 lg:space-y-4 transition-all duration-700 delay-300 ${
-              formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              formVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid md:grid-cols-2 gap-2 sm:gap-3">
-                <label className="flex flex-col">
-                  <span className="sr-only">Nombre</span>
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Nombre"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
-                  />
-                </label>
-                <label className="flex flex-col">
-                  <span className="sr-only">Email</span>
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
-                  />
-                </label>
-              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3">
               <label className="flex flex-col">
-                <span className="sr-only">Empresa</span>
+                <span className="sr-only">Nombre</span>
                 <Input
                   type="text"
-                  name="company"
-                  placeholder="Empresa"
-                  value={formData.company}
+                  name="name"
+                  placeholder="Nombre"
+                  value={formData.name}
                   onChange={handleChange}
+                  required
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="sr-only">Email</span>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
                 />
                 </label>
-              <label className="flex flex-col">
-                <span className="sr-only">Mensaje</span>
-                <Textarea
-                  name="message"
-                  placeholder="Cuéntanos sobre tu proyecto"
-                  rows={7}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[220px] lg:text-lg"
-                />
-                </label>
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-accent hover:opacity-90 text-white py-2 sm:py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-medium transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-              >
-                {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
-              </Button>
-            </form>
-          </div>
-        </section>
-      </>
+            </div>
+            <label className="flex flex-col">
+              <span className="sr-only">Empresa</span>
+              <Input
+                type="text"
+                name="company"
+                placeholder="Empresa"
+                value={formData.company}
+                onChange={handleChange}
+                className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-12 lg:text-lg"
+              />
+            </label>
+            <label className="flex flex-col">
+              <span className="sr-only">Mensaje</span>
+              <Textarea
+                name="message"
+                placeholder="Cuéntanos sobre tu proyecto"
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[160px] lg:text-lg"
+              />
+            </label>
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-accent hover:opacity-90 text-white py-2 sm:py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-medium transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+            </Button>
+          </form>
+        </div>
+      </section>
+    </>
   );
 }
