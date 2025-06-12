@@ -165,9 +165,11 @@ export default function Contact({
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-          <div className={`text-center mb-8 sm:mb-12 transition-all duration-700 ${
-          formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}>
+          <div
+          className={`text-center mb-8 sm:mb-12 max-w-4xl mx-auto transition-all duration-700 ${
+            formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5">
             Conecta con <span className="gradient-text">Nuestro Equipo</span>
           </h2>
@@ -176,14 +178,14 @@ export default function Contact({
           </p>
         </div>
 
-        <div className="max-w-7xl 2xl:max-w-none mx-auto">
+        <div className="max-w-4xl mx-auto">
           <form
             onSubmit={handleSubmit}
             className={`space-y-2 sm:space-y-3 lg:space-y-4 transition-all duration-700 delay-300 ${
               formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3">
+              <div className="grid md:grid-cols-2 gap-2 sm:gap-3">
                 <label className="flex flex-col">
                   <span className="sr-only">Nombre</span>
                   <Input
@@ -229,7 +231,7 @@ export default function Contact({
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[160px] lg:text-lg"
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[220px] lg:text-lg"
                 />
                 </label>
               <Button
