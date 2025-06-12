@@ -183,7 +183,7 @@ export default function Contact({
               formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4">
+              <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                 <label className="flex flex-col">
                   <span className="sr-only">Nombre</span>
                   <Input
@@ -225,12 +225,12 @@ export default function Contact({
                 <Textarea
                   name="message"
                   placeholder="Cuéntanos sobre tu proyecto"
-                  rows={5}
+                  rows={7}
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[200px] lg:text-lg"
-                  />
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light resize-none lg:min-h-[250px] lg:text-lg"
+                />
                 </label>
               <Button
                 type="submit"
