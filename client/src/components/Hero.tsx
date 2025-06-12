@@ -223,6 +223,7 @@ const [brainAscending, setBrainAscending] = useState(false);
               />
           </div>
         </div>
+        </div>
       </div>
         )}
         <AnimatePresence>
