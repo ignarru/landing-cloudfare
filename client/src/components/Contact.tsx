@@ -185,7 +185,7 @@ export default function Contact({
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto w-full">
           <form
             onSubmit={handleSubmit}
             className={`space-y-2 sm:space-y-3 lg:space-y-6 transition-all duration-700 delay-300 ${
@@ -194,8 +194,8 @@ export default function Contact({
                 : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid md:grid-cols-2 gap-2 sm:gap-3">
-              <label className="flex flex-col">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 w-full">
+              <label className="flex flex-col w-full">
                 <span className="sr-only">Nombre</span>
                 <Input
                   type="text"
@@ -207,7 +207,7 @@ export default function Contact({
                   className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
                 />
               </label>
-              <label className="flex flex-col">
+              <label className="flex flex-col w-full">
                 <span className="sr-only">Email</span>
                 <Input
                   type="email"
@@ -220,7 +220,7 @@ export default function Contact({
                 />
                 </label>
             </div>
-            <label className="flex flex-col">
+            <label className="flex flex-col w-full">
               <span className="sr-only">Empresa</span>
               <Input
                 type="text"
@@ -231,7 +231,7 @@ export default function Contact({
                 className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
               />
             </label>
-            <label className="flex flex-col">
+            <label className="flex flex-col w-full">
               <span className="sr-only">Mensaje</span>
               <Textarea
                 name="message"
