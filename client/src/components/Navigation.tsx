@@ -7,7 +7,8 @@ import {
   HERO_DELAY_MS,
   ABOUT_EXTRA_OFFSET,
   CONSULTA_EXTRA_OFFSET,
-  SERVICES_EXTRA_OFFSET
+  SERVICES_EXTRA_OFFSET,
+  PROCESS_EXTRA_OFFSET
 } from "@/lib/constants";
 
 export default function Navigation() {
@@ -28,6 +29,9 @@ export default function Navigation() {
   const servicesOffset = isMobile
     ? SERVICES_EXTRA_OFFSET.mobile
     : SERVICES_EXTRA_OFFSET.desktop;
+  const processOffset = isMobile
+    ? PROCESS_EXTRA_OFFSET.mobile
+    : PROCESS_EXTRA_OFFSET.desktop;
   const navRef = useRef<HTMLElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
@@ -118,7 +122,7 @@ export default function Navigation() {
               Servicios
             </button>
             <button
-              onClick={() => scrollToSection("proceso", 50)}
+              onClick={() => scrollToSection("proceso", processOffset)}
               className="text-white hover:text-accent transition-colors focus-visible:focus"
             >
               Proceso
@@ -183,7 +187,7 @@ export default function Navigation() {
                 Servicios
               </button>
               <button
-                onClick={() => scrollToSection("proceso", 50)}
+                onClick={() => scrollToSection("proceso", processOffset)}
                 className="text-left text-white hover:text-accent transition-colors focus-visible:focus"
               >
                 Proceso
