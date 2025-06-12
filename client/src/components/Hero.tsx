@@ -90,7 +90,7 @@ const [brainAscending, setBrainAscending] = useState(false);
     >
         <div className="max-w-7xl 2xl:max-w-none mx-auto text-center w-full">
         <motion.div
-          className={`absolute top-16 left-0 right-0 z-10 transition-all duration-1000 ${
+          className={`absolute top-24 left-0 right-0 z-10 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -128,7 +128,7 @@ const [brainAscending, setBrainAscending] = useState(false);
         </motion.div>
         
         <div
-          className={`relative mt-0 md:mt-2 lg:mt-0 xl:-mt-2 h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[28rem] flex flex-col items-center justify-center transform translate-y-6 sm:-translate-y-4 md:-translate-y-8 lg:-translate-y-12 xl:-translate-y-16 2xl:-translate-y-20 ${
+          className={`relative mt-0 md:mt-2 lg:mt-0 xl:-mt-2 h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[28rem] flex flex-col items-center justify-center transform translate-y-24 sm:translate-y-20 md:translate-y-16 lg:translate-y-12 xl:translate-y-12 2xl:translate-y-12 ${
             started ? "pointer-events-auto" : "pointer-events-none"
           }`}
         >
