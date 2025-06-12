@@ -119,8 +119,12 @@
   }
   
   body {
-    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden snap-y snap-mandatory;
     font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  section {
+    @apply snap-start min-h-screen;
   }
   
   html {
