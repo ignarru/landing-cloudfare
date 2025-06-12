@@ -139,7 +139,7 @@ export default function Contact({
       <section
         id="transformar"
         ref={ctaRef}
-        className={`py-12 sm:py-16 lg:py-24 scroll-mt-36 md:scroll-mt-28 bg-gradient-to-r from-accent to-blue-900 transition-all duration-700 ${
+        className={`py-20 sm:py-28 lg:py-40 lg:min-h-[70vh] lg:flex lg:items-center scroll-mt-36 md:scroll-mt-28 bg-gradient-to-r from-accent to-blue-900 transition-all duration-700 ${
           ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
