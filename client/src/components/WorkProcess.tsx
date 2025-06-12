@@ -103,9 +103,9 @@ export default function WorkProcess() {
     <section
       id="nuestro-proceso"
       ref={sectionRef}
-      className="py-16 sm:py-20 mb-0 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-20"
+      className="py-20 sm:py-24 mt-16 sm:mt-20 mb-0 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-24"
     >
-      <div className="max-w-7xl 2xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 2xl:px-20">
+      <div className="max-w-7xl 2xl:max-w-none mx-auto px-6 sm:px-8 lg:px-12 2xl:px-24">
         <div className={`text-center mb-16 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
@@ -119,7 +119,7 @@ export default function WorkProcess() {
         
         <div className="relative">
           {/* Timeline - Fixed positioning */}
-          <div className="process-timeline relative py-12 md:py-16 lg:py-20">
+          <div className="process-timeline relative py-16 md:py-20 lg:py-24">
             <div className="space-y-16 md:space-y-20">
               {processSteps.map((step, index) => (
                 <StepItem key={step.number} step={step} index={index} />
