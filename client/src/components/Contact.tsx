@@ -144,7 +144,7 @@ export default function Contact({
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             ¿Listo para Transformar tu Negocio?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto">
             Agenda una consulta gratuita y descubre cómo la IA puede revolucionar tu empresa
           </p>
           <Button
@@ -171,12 +171,12 @@ export default function Contact({
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Conecta con <span className="gradient-text">Nuestro Equipo</span>
           </h2>
-          <p className="text-lg sm:text-xl text-iabyia-light max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-iabyia-light max-w-4xl mx-auto">
             Cuéntanos sobre tu proyecto y descubre cómo podemos ayudarte a implementar IA en tu negocio
           </p>
         </div>
 
-        <div className="max-w-3xl 2xl:max-w-4xl mx-auto">
+        <div className="max-w-4xl 2xl:max-w-5xl mx-auto">
           <form
             onSubmit={handleSubmit}
             className={`space-y-3 sm:space-y-4 transition-all duration-700 delay-300 ${
