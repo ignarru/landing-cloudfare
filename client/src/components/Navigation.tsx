@@ -82,7 +82,7 @@ export default function Navigation() {
         isScrolled ? "glass-effect" : "bg-transparent"
       } ${isNavVisible ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl 2xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 2xl:px-20">
         <div ref={barRef} className="flex justify-between items-center py-4">
           {/* Logo */}
           <div
