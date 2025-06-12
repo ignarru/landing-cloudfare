@@ -140,7 +140,7 @@ export default function Contact({
           ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl 2xl:max-w-none mx-auto px-4 sm:px-6 lg:px-8 2xl:px-20 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             ¿Listo para Transformar tu Negocio?
           </h2>
@@ -176,7 +176,7 @@ export default function Contact({
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl 2xl:max-w-3xl mx-auto">
           <form
             onSubmit={handleSubmit}
             className={`space-y-3 sm:space-y-4 transition-all duration-700 delay-300 ${
