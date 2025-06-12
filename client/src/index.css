@@ -343,16 +343,16 @@
     transform: translateY(0);
   }
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-18px);
   }
   100% {
-    transform: translateY(-30px);
+    transform: translateY(-25px);
   }
 }
 
 @keyframes brain-fast-down {
   from {
-    transform: translateY(-30px);
+    transform: translateY(-25px);
   }
   to {
     transform: translateY(120vh);
@@ -361,7 +361,7 @@
 
 @keyframes brain-fall {
   0% {
-    transform: translateY(-30px);
+    transform: translateY(-25px);
     opacity: 1;
   }
   50% {
