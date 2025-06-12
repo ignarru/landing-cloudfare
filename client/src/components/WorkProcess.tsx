@@ -101,7 +101,7 @@ export default function WorkProcess() {
 
   return (
     <section
-      id="proceso"
+      id="nuestro-proceso"
       ref={sectionRef}
       className="py-16 sm:py-20 mt-16 sm:mt-20 mb-0 bg-secondary lg:min-h-screen lg:flex lg:items-center lg:py-20"
     >
