@@ -54,7 +54,7 @@ function StepItem({ step, index }: { step: ProcessStep; index: number }) {
     >
       {/* Step number circle */}
       <div
-        className={`absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 ${step.color} rounded-full flex items-center justify-center z-10 shadow-lg`}
+        className={`absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 ${step.color} rounded-full flex items-center justify-center z-10 shadow-lg`}
       >
         <div className="flex flex-col items-center">
           {step.icon}
@@ -68,9 +68,9 @@ function StepItem({ step, index }: { step: ProcessStep; index: number }) {
           index % 2 === 0 ? "md:w-6/12 md:pr-8" : "md:w-6/12 md:ml-auto md:pl-8"
         }`}
       >
-        <div className="glass-effect rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300">
-          <h3 className="text-3xl font-semibold mb-4">{step.title}</h3>
-          <p className="text-lg text-iabyia-light leading-relaxed">{step.description}</p>
+        <div className="glass-effect rounded-xl p-6 sm:p-8 hover:transform hover:scale-105 transition-all duration-300">
+          <h3 className="text-2xl sm:text-3xl font-semibold mb-3 sm:mb-4">{step.title}</h3>
+          <p className="text-base sm:text-lg text-iabyia-light leading-relaxed">{step.description}</p>
         </div>
       </div>
     </div>
