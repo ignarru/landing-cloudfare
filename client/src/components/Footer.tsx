@@ -15,8 +15,8 @@ export default function Footer() {
               <span className="text-2xl font-bold gradient-text">IAbyIA</span>
             </div>
             <p className="text-iabyia-light mb-6 leading-relaxed">
-              Transformamos negocios con soluciones de Inteligencia Artificial personalizadas. 
-              /nTu socio estratégico en la era digital.
+              Transformamos negocios con soluciones de Inteligencia Artificial personalizadas./n
+              Tu socio estratégico en la era digital.
             </p>
             <div className="flex space-x-4">
               <a 
