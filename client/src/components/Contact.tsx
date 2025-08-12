@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { insertContactSchema } from "@shared/schema";
-import { z } from "zod";
 
 export interface ContactProps {
   offset?: typeof CONTACT_EXTRA_OFFSET;
@@ -88,10 +87,7 @@ export default function Contact({
     setIsSubmitting(true);
 
     try {
-      const formSchema = insertContactSchema.extend({
-        email: z.string().email({ message: "Email inválido" }),
-      });
-      const parsed = formSchema.safeParse(formData);
+      const parsed = insertContactSchema.safeParse(formData);
       if (!parsed.success) {
         const message = parsed.error.errors[0]?.message || "Datos inválidos";
         throw new Error(message);
@@ -134,6 +130,10 @@ export default function Contact({
     }));
   };
 
+  const isFormValid = Object.values(formData).every(
+    (value) => value.trim() !== "",
+  );
+  
   return (
     <>
       {/* CTA Section */}
@@ -230,6 +230,7 @@ export default function Contact({
                   placeholder="Teléfono"
                   value={formData.phone}
                   onChange={handleChange}
+                  required
                   className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
                 />
               </label>
@@ -241,6 +242,7 @@ export default function Contact({
                   placeholder="Empresa"
                   value={formData.company}
                   onChange={handleChange}
+                  required
                   className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
                 />
               </label>
@@ -259,7 +261,7 @@ export default function Contact({
             </label>
             <Button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !isFormValid}
               className="w-full bg-accent hover:opacity-90 text-white py-2 sm:py-3 lg:py-5 text-sm sm:text-base lg:text-xl font-medium transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
