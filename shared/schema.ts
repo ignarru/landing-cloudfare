@@ -13,6 +13,7 @@ export const contacts = pgTable("contacts", {
   name: text("name").notNull(),
   email: text("email").notNull(),
   company: text("company"),
+  phone: text("phone"),
   message: text("message").notNull(),
   receivedAt: timestamp("received_at").defaultNow(),
 });
