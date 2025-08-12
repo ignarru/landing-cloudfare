@@ -195,7 +195,7 @@ export default function Contact({
                 : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 w-full">
               <label className="flex flex-col w-full">
                 <span className="sr-only">Nombre</span>
                 <Input
@@ -220,6 +220,19 @@ export default function Contact({
                   className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
                 />
                 </label>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 w-full">
+              <label className="flex flex-col w-full">
+                <span className="sr-only">Teléfono</span>
+                <Input
+                  type="tel"
+                  name="phone"
+                  placeholder="Teléfono"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
+                />
+              </label>
               <label className="flex flex-col w-full">
                 <span className="sr-only">Empresa</span>
                 <Input
@@ -232,17 +245,6 @@ export default function Contact({
                 />
               </label>
             </div>
-            <label className="flex flex-col w-full">
-              <span className="sr-only">Teléfono</span>
-              <Input
-                type="tel"
-                name="phone"
-                placeholder="Teléfono"
-                value={formData.phone}
-                onChange={handleChange}
-                className="iabyia-secondary border-gray-700 focus:border-accent bg-secondary text-foreground placeholder:text-iabyia-light h-10 md:h-9 lg:h-14 lg:text-xl"
-              />
-            </label>
             <label className="flex flex-col w-full">
               <span className="sr-only">Mensaje</span>
               <Textarea
