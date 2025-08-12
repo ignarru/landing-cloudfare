@@ -27,10 +27,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const contact: InsertContact = parsed.data;
       const { error } = await supabase.from("contacts").insert(contact);
       if (error) {
-        throw error;
+        console.error(error);
+        return res
+          .status(500)
+          .json({ message: error.message || "Failed to store contact" });
       }
 
-  lastSubmission[ip as string] = Date.now();
+      lastSubmission[ip as string] = Date.now();
       res.status(201).json({ message: "ok" });
     } catch (err) {
       next(err);
