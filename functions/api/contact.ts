@@ -43,13 +43,18 @@ export const onRequestPost = async (context: any): Promise<Response> => {
     }
 
     const supabase = createClient(supabaseUrl, serviceKey);
-    const { error } = await supabase.from('contacts').insert(parsed.data as InsertContact);
+    const { error } = await supabase
+      .from('contacts')
+      .insert(parsed.data as InsertContact);
     if (error) {
       console.error(error);
-      return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return new Response(
+        JSON.stringify({ message: error.message || 'Failed to store contact' }),
+        {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' },
+        },
+      );
     }
 
     lastSubmission.set(ip, Date.now());
@@ -59,7 +64,8 @@ export const onRequestPost = async (context: any): Promise<Response> => {
     });
   } catch (err) {
     console.error(err);
-    return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
+    const message = err instanceof Error ? err.message : 'Internal Server Error';
+    return new Response(JSON.stringify({ message }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
