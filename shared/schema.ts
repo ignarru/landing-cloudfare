@@ -18,7 +18,11 @@ export const contacts = pgTable("contacts", {
   receivedAt: timestamp("received_at").defaultNow(),
 });
 
-export const insertContactSchema = createInsertSchema(contacts).omit({
+export const insertContactSchema = createInsertSchema(contacts, {
+  email: z.string().email({ message: "Email inválido" }),
+  company: z.string().min(1, { message: "Empresa es requerida" }),
+  phone: z.string().min(1, { message: "Teléfono es requerido" }),
+}).omit({
   id: true,
   receivedAt: true,
 });
