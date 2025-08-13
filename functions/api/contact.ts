@@ -1,73 +1,51 @@
-import { createClient } from '@supabase/supabase-js';
-import { insertContactSchema, type InsertContact } from '../../shared/schema';
-
-const lastSubmission = new Map<string, number>();
-
-export const onRequestPost = async (context: any): Promise<Response> => {
-  const env = (context.env ?? {}) as Record<string, string>;
+// Cloudflare Pages Function
+export const onRequestPost: PagesFunction = async ({ request, env }) => {
   try {
-    const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
-    const last = lastSubmission.get(ip) ?? 0;
-    if (Date.now() - last < 60_000) {
-      return new Response(JSON.stringify({ message: 'Too many requests' }), {
-        status: 429,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    const data = await context.request.json();
-    const parsed = insertContactSchema.safeParse(data);
-    if (!parsed.success) {
-      return new Response(JSON.stringify({ message: 'Invalid data' }), {
-        status: 400,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    const supabaseUrl = env.SUPABASE_URL?.trim();
-    const serviceKey =
-      env.SUPABASE_SERVICE_ROLE_KEY?.trim() ||
-      env.SUPABASE_SERVICE_KEY?.trim() ||
-      env.SUPABASE_SECRET_KEY?.trim() ||
-      env.SUPABASE_ANON_KEY?.trim() ||
-      env.SUPABASE_KEY?.trim();
-
-    if (!supabaseUrl || !serviceKey) {
-      console.warn('Supabase credentials missing; logging submission');
-      console.log('contact submission', parsed.data);
-      lastSubmission.set(ip, Date.now());
-      return new Response(JSON.stringify({ message: 'Service unavailable' }), {
-        status: 503,
-        headers: { 'Content-Type': 'application/json' },
-      });
-    }
-
-    const supabase = createClient(supabaseUrl, serviceKey);
-    const { error } = await supabase
-      .from('contacts')
-      .insert(parsed.data as InsertContact);
-    if (error) {
-      console.error(error);
+    // 1) Validar que existan las envs (sin loguear secretos)
+    if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) {
       return new Response(
-        JSON.stringify({ message: error.message || 'Failed to store contact' }),
-        {
-          status: 500,
-          headers: { 'Content-Type': 'application/json' },
-        },
+        JSON.stringify({
+          error: "Missing server env",
+          hasUrl: Boolean(env.SUPABASE_URL),
+          hasKey: Boolean(env.SUPABASE_SERVICE_ROLE_KEY),
+        }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
 
-    lastSubmission.set(ip, Date.now());
-    return new Response(JSON.stringify({ message: 'ok' }), {
-      status: 201,
-      headers: { 'Content-Type': 'application/json' },
+    // 2) Parsear body
+    const { name, email, company, phone, message } = await request.json();
+
+    // 3) Preparar payload (campos opcionales null)
+    const payload = {
+      name,
+      email,
+      company: company ?? null,
+      phone: phone ?? null,
+      message: message ?? null,
+    };
+
+    // 4) Llamar a Supabase REST con Service Role en ambos headers
+    const res = await fetch(`${env.SUPABASE_URL}/rest/v1/contacts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": env.SUPABASE_SERVICE_ROLE_KEY,
+        "Authorization": `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+        "Prefer": "return=representation",
+      },
+      body: JSON.stringify(payload),
     });
-  } catch (err) {
-    console.error(err);
-    const message = err instanceof Error ? err.message : 'Internal Server Error';
-    return new Response(JSON.stringify({ message }), {
+
+    const text = await res.text();
+    return new Response(text, {
+      status: res.status,
+      headers: { "Content-Type": res.headers.get("content-type") ?? "application/json" },
+    });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message ?? "Unhandled" }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     });
   }
 };
