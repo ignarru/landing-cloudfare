@@ -118,12 +118,12 @@
         function loadAnalytics() {
           const gaScript = document.createElement('script');
           gaScript.async = true;
-          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-0H542RKWLP';
+          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-88BZMW2TNE';
           document.head.appendChild(gaScript);
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
           gtag('js', new Date());
-          gtag('config', 'G-0H542RKWLP', { anonymize_ip: true });
+          gtag('config', 'G-88BZMW2TNE', { anonymize_ip: true });
         }
         if (localStorage.getItem(consentKey)) {
           loadAnalytics();
