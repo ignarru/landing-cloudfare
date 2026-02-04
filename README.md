@@ -1,10 +1,14 @@
 # Landing Pro
 
-This project uses [Supabase](https://supabase.com) to store the contact form submissions. The form **requires** valid Supabase credentials to function properly.
+This project now embeds [Cal.com](https://cal.com) in the contact section so leads can book meetings directly. You can point the scheduler to your own event by setting `VITE_CALCOM_LINK` to your Cal.com slug or full URL. The repository still includes the Supabase-backed contact API under `/api/contact` if you decide to keep storing submissions.
+
+## Cal.com configuration
+
+Set `VITE_CALCOM_LINK` to your Cal.com booking slug (for example `calcom/30min` or `your-team/demo`) so the embedded widget shows your availability. If it is not provided, the site falls back to the Cal.com demo event.
 
 ## Environment variables
 
-Copy `.env.example` to `.env` (this file is ignored by Git) and fill in your Supabase credentials, or set these variables in your deployment service. The example file only contains placeholders, so your deployment environment must provide actual credentials:
+Copy `.env.example` to `.env` (this file is ignored by Git) and fill in your Supabase credentials if you will use the `/api/contact` endpoint, or set these variables in your deployment service. The example file only contains placeholders, so your deployment environment must provide actual credentials:
 
 
 ```bash
