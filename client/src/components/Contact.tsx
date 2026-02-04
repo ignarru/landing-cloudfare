@@ -2,12 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CONTACT_EXTRA_OFFSET } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
-declare global {
-  interface Window {
-    Cal?: (command: string, payload?: Record<string, unknown>) => void;
-  }
-}
-
 export interface ContactProps {
   offset?: typeof CONTACT_EXTRA_OFFSET;
 }
@@ -17,10 +11,10 @@ export default function Contact({
 }: ContactProps) {
   const [ctaVisible, setCtaVisible] = useState(false);
   const [formVisible, setFormVisible] = useState(false);
- const [embedReady, setEmbedReady] = useState(false);
+  const [embedReady, setEmbedReady] = useState(false);
   const ctaRef = useRef<HTMLElement>(null);
   const formRef = useRef<HTMLElement>(null);
-  
+
   const calSlug = useMemo(() => {
     const value =
       import.meta.env.VITE_CALCOM_LINK?.toString().trim() || "calcom/30min";
@@ -33,6 +27,10 @@ export default function Contact({
   const calBookingUrl = useMemo(
     () => `https://cal.com/${calSlug}`,
     [calSlug],
+  );
+  const calEmbedUrl = useMemo(
+    () => `${calBookingUrl}?embed=1&background=transparent`,
+    [calBookingUrl],
   );
 
   const scrollToContact = (customOffset = offset) => {
@@ -92,41 +90,7 @@ export default function Contact({
 
   useEffect(() => {
     setEmbedReady(false);
-
-    const initializeCal = () => {
-      if (!window.Cal) return;
-
-          window.Cal("init", { origin: "https://cal.com" });
-      window.Cal("inline", {
-        elementOrSelector: "#calcom-booking",
-        calLink: calSlug,
-      });
-window.Cal("ui", {
-        theme: "dark",
-        styles: { branding: { brandColor: "#0ea5e9" } },
-        hideEventTypeDetails: false,
-      });
-      setEmbedReady(true);
-    };
-
-    if (window.Cal) {
-      initializeCal();
-      return;
-    }
-
-  const script = document.createElement("script");
-    script.src = "https://cal.com/embed.js";
-    script.async = true;
-    script.onload = initializeCal;
-    document.head.appendChild(script);
-
-  return () => {
-      script.onload = null;
-      if (script.parentElement) {
-        script.parentElement.removeChild(script);
-      }
-    };
-  }, [calSlug]);
+  }, [calEmbedUrl]);
   
   return (
     <>
@@ -148,7 +112,7 @@ window.Cal("ui", {
           </p>
           <Button
             onClick={() => scrollToContact(offset)}
-           aria-label="Ir a la agenda de reuniones"
+            aria-label="Ir a la agenda de reuniones"
             className="bg-white text-accent hover:bg-gray-100 px-6 py-3 lg:px-10 lg:py-5 text-base lg:text-xl font-semibold transform hover:scale-105 transition-all"
           >
             Agendar Consulta Gratuita
@@ -164,7 +128,7 @@ window.Cal("ui", {
           formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-          <div className="pointer-events-none absolute inset-0">
+        <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-24 top-10 h-72 w-72 bg-accent/20 blur-3xl" />
           <div className="absolute -right-10 bottom-10 h-80 w-80 bg-blue-600/20 blur-3xl" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-black/60" />
@@ -198,7 +162,7 @@ window.Cal("ui", {
                 : "opacity-0 translate-y-10"
             }`}
           >
-              <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
+            <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-left">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
@@ -225,28 +189,15 @@ window.Cal("ui", {
                 </div>
               )}
 
-              <div
-                id="calcom-booking"
-                className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-2 sm:p-4 shadow-inner min-h-[720px]"
-              />
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between bg-slate-900/50 border border-slate-800/60 rounded-2xl px-4 py-3 text-sm sm:text-base text-iabyia-light">
-                <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-accent" aria-hidden />
-                  <span>
-                    ¿Prefieres abrir el calendario en otra pestaña? Puedes hacerlo aquí.
-                  </span>
-                </div>
-                <div className="flex gap-3 justify-end">
-                  <Button
-                    asChild
-                    variant="secondary"
-                    className="bg-white/10 text-white border border-white/20 hover:bg-white/20"
-                  >
-                    <a href={calBookingUrl} target="_blank" rel="noreferrer">
-                      Abrir en Cal.com
-                    </a>
-                  </Button>
-                </div>
+              <div className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-2 sm:p-4 shadow-inner min-h-[720px]">
+                <iframe
+                  title="Reserva tu reunión"
+                  src={calEmbedUrl}
+                  className="h-[720px] w-full rounded-xl border-0"
+                  allow="camera; microphone; fullscreen; payment"
+                  loading="lazy"
+                  onLoad={() => setEmbedReady(true)}
+                />
               </div>
             </div>
           </div>
@@ -254,4 +205,3 @@ window.Cal("ui", {
       </section>
     </>
   );
-}
