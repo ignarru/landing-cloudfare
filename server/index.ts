@@ -12,10 +12,15 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "https://www.googletagmanager.com"],
+        scriptSrc: [
+          "'self'",
+          "https://www.googletagmanager.com",
+          "https://cal.com",
+        ],
         styleSrc: ["'self'", "https:", "'unsafe-inline'"],
         imgSrc: ["'self'", "data:", "https:"],
-        connectSrc: ["'self'"],
+        connectSrc: ["'self'", "https://cal.com", "https://*.cal.com"],
+        frameSrc: ["'self'", "https://cal.com", "https://*.cal.com"],
         fontSrc: ["'self'", "https:", "data:"],
         objectSrc: ["'none'"],
         upgradeInsecureRequests: [],
