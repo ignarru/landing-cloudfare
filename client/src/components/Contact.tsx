@@ -157,12 +157,12 @@ export default function Contact({
         <div className="relative max-w-6xl mx-auto w-full px-2 sm:px-4">
           <div
             className={`relative overflow-hidden rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-950/90 via-slate-900/80 to-black/80 backdrop-blur supports-[backdrop-filter]:backdrop-blur-xl shadow-2xl ring-1 ring-white/5 transition-all duration-700 delay-300 ${
-              formVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
           >
             <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
+              <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-left">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
@@ -177,14 +177,22 @@ export default function Contact({
                   </p>
                 </div>
                 <div className="hidden sm:flex items-center gap-3 bg-accent/10 border border-accent/30 rounded-full px-4 py-2 text-accent">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden />
-                  <span className="text-sm font-semibold">Cupos disponibles esta semana</span>
+                  <span
+                    className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+                    aria-hidden
+                  />
+                  <span className="text-sm font-semibold">
+                    Cupos disponibles esta semana
+                  </span>
                 </div>
               </div>
 
               {!embedReady && (
                 <div className="flex items-center gap-3 text-iabyia-light text-base">
-                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-accent border-t-transparent" aria-hidden />
+                  <span
+                    className="h-4 w-4 animate-spin rounded-full border-2 border-accent border-t-transparent"
+                    aria-hidden
+                  />
                   Preparando el calendario...
                 </div>
               )}
@@ -205,3 +213,4 @@ export default function Contact({
       </section>
     </>
   );
+}
