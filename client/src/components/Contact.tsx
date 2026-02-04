@@ -157,12 +157,12 @@ export default function Contact({
         <div className="relative max-w-6xl mx-auto w-full px-2 sm:px-4">
           <div
             className={`relative overflow-hidden rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-950/90 via-slate-900/80 to-black/80 backdrop-blur supports-[backdrop-filter]:backdrop-blur-xl shadow-2xl ring-1 ring-white/5 transition-all duration-700 delay-300 ${
+              formVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
           >
             <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
-              <div className="flex flex-col gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-left">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.12em] text-accent">
